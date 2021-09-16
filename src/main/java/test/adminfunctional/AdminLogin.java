@@ -12,15 +12,22 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import utilities.PropertyReader;
+
 public class AdminLogin {
 
-	String base_url = "http://localhost/online%20car%20rental%20PHP%20upd/carrental/index.php";
-	WebDriver driver;
+	String base_Url = PropertyReader.getProperty("admin_URL");
+	String path = PropertyReader.getProperty("Chrome_Driver_Path");
+	String admin_Name = PropertyReader.getProperty("admin_Name");
+	String admin_Password = PropertyReader.getProperty("admin_Password");
+	String admin_Invalid_Password = PropertyReader.getProperty("admin_Invalid_Password");
+	
+	WebDriver driver = null;
 	
 	@BeforeTest
 	public void BeforeTest() {
 
-		System.setProperty("webdriver.chrome.driver","D:\\Java\\MiniProject\\resource\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",path);
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 
@@ -37,40 +44,26 @@ public class AdminLogin {
 	
 	public void validLogin() { 
 		
-		String expectedTitle = "Car Rental Portal | Admin Change Password";
-		//	driver = new ChromeDriver();
+		String expected_Title = PropertyReader.getProperty("admin_Page_Title");
 		
-		//System.setProperty("webdriver.chrome.driver","F:\\Selenium\\Practice\\resource\\chromedriver.exe");
+		driver.get(base_Url);
 		
-		//String base_url = "http://localhost/online%20car%20rental%20PHP%20upd/carrental/index.php";
-			
-		//WebDriver driver = new ChromeDriver();
-		driver.get(base_url);
 		
-		driver.findElement(By.linkText("Admin Login")).click();
-		
-		driver.findElement(By.xpath("(//input[@name = 'username'])")).sendKeys("admin");
+		driver.findElement(By.xpath("(//input[@name = 'username'])")).sendKeys(admin_Name);
 		
 
 		
-		WebElement web = driver.findElement(By.xpath("(//input[@name = 'password'])"));
+		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Password);
 
         
-		web.sendKeys("Test@12345");
+		
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div/form/button")).click();
 		
 
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-
-		web.sendKeys(Keys.ENTER);
 		
-		//driver.manage().timeouts().implicitlyWait(100,TimeUnit.SECONDS) ;
-
-		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-
+		String actual_Title = driver.getTitle();
 		
-		String actualTitle = driver.getTitle();
-		
-		Assert.assertEquals(actualTitle, expectedTitle);
+		Assert.assertEquals(actual_Title, expected_Title);
 		
 
 		
@@ -80,18 +73,17 @@ public class AdminLogin {
 
 	public void adminLogout() throws InterruptedException { 
 		
-		String expectedTitle = "Car Rental Portal | Admin Login";
+		String expected_Title = PropertyReader.getProperty("admin_Login_Page_Title");
+		
 		driver.findElement(By.linkText("Account")).click();
 
-		Thread.sleep(1000);
 		
 		driver.findElement(By.linkText("Logout")).click();
 		
-		Thread.sleep(100);
 
-		String actualTitle = driver.getTitle();
+		String actual_Title = driver.getTitle();
 		
-		Assert.assertEquals(actualTitle, expectedTitle);
+		Assert.assertEquals(actual_Title, expected_Title);
 		
 		
 	}
@@ -99,36 +91,28 @@ public class AdminLogin {
 	@Test(priority = 3)
 	
 	public void invalidLogin() { 
-		driver.get(base_url);
-		String expmsg = "Invalid Details";
+		driver.get(base_Url);
+		String expected_Message = "Invalid Details";
 		
-		driver.get(base_url);
+		driver.get(base_Url);
 		
-		driver.findElement(By.linkText("Admin Login")).click();
+
+		driver.findElement(By.xpath("(//input[@name = 'username'])")).sendKeys(admin_Name);
 		
-		driver.findElement(By.xpath("(//input[@name = 'username'])")).sendKeys("admin");
-		
-		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 
 		
-		WebElement web = driver.findElement(By.xpath("(//input[@name = 'password'])"));
+		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Invalid_Password);
 
         
-		web.sendKeys("Test@1234");
 		
-
-		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-
-		web.sendKeys(Keys.ENTER);
-		
-		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div/form/button")).click();
 
 		
 		
 		
-		String msg = driver.switchTo().alert().getText();
+		String actual_Message = driver.switchTo().alert().getText();
 		
-		Assert.assertEquals(msg, expmsg);
+		Assert.assertEquals(actual_Message, expected_Message);
 
 	}
 	

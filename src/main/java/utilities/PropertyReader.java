@@ -13,7 +13,7 @@ public class PropertyReader {
 		Properties property = new Properties();
 		FileReader reader = null;
 		try {
-			reader = new FileReader("resources/data/TestData.properties");
+			reader = new FileReader("src/main/resources/data/TestData.properties");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
