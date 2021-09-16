@@ -1,4 +1,4 @@
-package pages.admin;
+package test.adminfunctional;
 
 import java.util.concurrent.TimeUnit;
 
@@ -141,3 +141,4 @@ public class AdminLogin {
 		
 	}
 }
+
