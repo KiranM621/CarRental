@@ -9,12 +9,15 @@ public class LoginSignupPage {
 
 	By login_Signup=By.xpath("/html/body/header/div/div/div/div[2]/div/div[4]/a");
 	By user_Name = By.xpath("//*[@id=\"loginform\"]/div/div/div[2]/div/div/div/form/div[1]/input");
-	By password = By.xpath("//*[@id=\"loginform\"]/div/div/div[2]/div/div/div/form/div[2]/input");
+	By password = By.xpath("//*[@id=\"signupform\"]/div/div/div[2]/div/div/div/form/div[4]/input");
+	By confirm_Password = By.xpath("(//input[@name='confirmpassword'])");
 	By login_Button = By.xpath("//*[@id=\"loginform\"]/div/div/div[2]/div/div/div/form/div[4]/input");
-	By sign_Up=By.xpath("//*[@id=\"loginform\"]/div/div/div[3]/p[1]/a");
+	By sign_Up= By.linkText("Signup Here");
 	By sign_Up_Fullname=By.name("fullname");
 	By sign_Up_Mob=By.name("mobileno");
 	By sign_Up_Email=By.id("emailid");
+	By forgot_Password = By.linkText("Forgot Password ?");
+	By submit = By.xpath("//*[@id=\"submit\"]");
 	
 	
 	public LoginSignupPage (WebDriver driver) {
@@ -27,16 +30,17 @@ public class LoginSignupPage {
 	}
 	
 	
-	public void enterUserName(String arg1) {
-	driver.findElement(user_Name).sendKeys(arg1);
+	
+	
+	public void setPasswrod(String new_Password) {
+	driver.findElement(password).sendKeys(new_Password);
 	}
 	
-	
-	public void enterPasswrod(String arg1) {
-	driver.findElement(password).sendKeys(arg1);
+	public void setConfirmPassword(String password) {
+		driver.findElement(confirm_Password).sendKeys(password);
 	}
 	
-	public void login() {
+	public void clickOnLogin() {
 		driver.findElement(login_Button).click();
 		
 	}
@@ -47,19 +51,30 @@ public class LoginSignupPage {
 	}
 	
 	
-	public void enterFullname(String arg1) {
-		driver.findElement(sign_Up_Fullname).sendKeys(arg1);
+	public void setUserName(String name) {
+		driver.findElement(sign_Up_Fullname).sendKeys(name);
 		}
 	
 	
-	public void enterMob(String arg1) {
-		driver.findElement(sign_Up_Mob).sendKeys(arg1);
+	public void setUserNumber(String number) {
+		driver.findElement(sign_Up_Mob).sendKeys(number);
 		}
 	
 	
-	public void enterEmailId(String arg1) {
-		driver.findElement(sign_Up_Email).sendKeys(arg1);
+	public void setUserEmail(String email) {
+		driver.findElement(sign_Up_Email).sendKeys(email);
 		}
+	
+	public void clickOnForgotPassword() { 
+		
+		driver.findElement(forgot_Password).click();
+		
+	}
+	
+	public void clickOnSubmit() { 
+		driver.findElement(submit).click();
+
+	}
 
 
 }

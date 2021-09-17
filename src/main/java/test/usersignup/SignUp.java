@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import pages.LoginSignupPage;
 import utilities.PropertyReader;
 
 public class SignUp {
@@ -26,6 +27,7 @@ public class SignUp {
 	String user_Number = PropertyReader.getProperty("new_User_Number");
 	String user_Password = PropertyReader.getProperty("new_User_Password");
 
+	LoginSignupPage loginSignupPageObject= null;
 	
 	@BeforeTest
 	
@@ -33,8 +35,8 @@ public class SignUp {
 
 		System.setProperty("webdriver.chrome.driver",path);
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();;
-
+		driver.manage().window().maximize();
+		loginSignupPageObject = new LoginSignupPage(driver);
 	}
 	
 	@BeforeMethod
@@ -53,28 +55,27 @@ public class SignUp {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		String expected_Message = PropertyReader.getProperty("registration_Success");
 		
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 
 		
+		//Referencing From LoginSignupPage
+		loginSignupPageObject.clickOnLoginSignup();
+
+		loginSignupPageObject.clickSignup();
+		
+		
+		
+		loginSignupPageObject.setUserName(user_Name);
+		loginSignupPageObject.setUserNumber(user_Number);
+		loginSignupPageObject.setUserEmail(user_Email);
+		loginSignupPageObject.setPasswrod(user_Password);
+		loginSignupPageObject.setConfirmPassword(user_Password);
+		
+		
+		
+		loginSignupPageObject.clickOnSubmit();
 		
 
-		driver.findElement(By.xpath("/html/body/header/div/div/div/div[2]/div/div[4]/a")).click();
-		
-		driver.findElement(By.linkText("Signup Here")).click();
-		
-		driver.findElement(By.xpath("(//input[@name='fullname'])")).sendKeys(user_Name);
-		driver.findElement(By.xpath("(//input[@name='mobileno'])")).sendKeys(user_Number);
-		driver.findElement(By.xpath("(//input[@name='emailid'])")).sendKeys(user_Email);
-
-		
-		driver.findElement(By.xpath("//*[@id=\"signupform\"]/div/div/div[2]/div/div/div/form/div[4]/input")).sendKeys(user_Password);
-		driver.findElement(By.xpath("(//input[@name='confirmpassword'])")).sendKeys(user_Password);
-
-		
-		
-		
-
-		driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
 
 		String actual_Message =driver.switchTo().alert().getText() ;
 		
@@ -92,30 +93,21 @@ public class SignUp {
 		String expected_Message = PropertyReader.getProperty("email_Present");
 		
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
-
 		
-		
-
-		driver.findElement(By.xpath("/html/body/header/div/div/div/div[2]/div/div[4]/a")).click();
-		
-		driver.findElement(By.linkText("Signup Here")).click();
-		
-		driver.findElement(By.xpath("(//input[@name='fullname'])")).sendKeys(user_Name);
-		driver.findElement(By.xpath("(//input[@name='mobileno'])")).sendKeys(user_Number);
-		driver.findElement(By.xpath("(//input[@name='emailid'])")).sendKeys(user_Email);
-
-		
-		driver.findElement(By.xpath("//*[@id=\"signupform\"]/div/div/div[2]/div/div/div/form/div[4]/input")).sendKeys(user_Password);
-		driver.findElement(By.xpath("(//input[@name='confirmpassword'])")).sendKeys(user_Password);
+		//Referencing From LoginSignupPages
+		loginSignupPageObject.clickOnLoginSignup();
+		loginSignupPageObject.clickSignup();
+	
+		loginSignupPageObject.setUserName(user_Name);
+		loginSignupPageObject.setUserNumber(user_Number);
+		loginSignupPageObject.setUserEmail(user_Email);
+		loginSignupPageObject.setPasswrod(user_Password);
+		loginSignupPageObject.setConfirmPassword(user_Password);
 
 		
 		
 		String actual_Message = driver.findElement(By.xpath("//*[@id=\"user-availability-status\"]/span")).getText();
-		
-
-
-		
-		
+			
 		Assert.assertEquals(actual_Message,expected_Message);
 		
 		
