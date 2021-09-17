@@ -7,16 +7,26 @@ import org.openqa.selenium.support.ui.Select;
 public class HomePage {
 	
 	WebDriver driver;
-
+    
+	//Home page car list btn
 	By car_List=By.xpath("//*[@id=\"navigation\"]/ul/li[3]/a");
+	//search car
 	By search_Car=By.xpath("/html/body/section[2]/div/div/aside/div[1]/div[2]/form/div[3]/button");
+	//contact us btn
 	By contactus=By.xpath("//*[@id=\"navigation\"]/ul/li[5]/a");
+	//contact us fullname textbox
 	By contactus_Fullname=By.id("fullname");
+	//contact us email textbox
 	By contactus_Email=By.name("email");
+	//contact us mobile number textbox
 	By contactus_Mob=By.id("phonenumber");
+	//contact us message textbox
 	By contactus_Msg=By.name("message");
+	//contact us send btn
 	By contactus_send=By.name("send");
+	//my profile btn
 	By homePage_Profile=By.xpath("//*[@id=\"navigation_bar\"]/div/div[2]/div[1]/ul/li/a");
+	//my booking under my profile
 	By homePage_MyBooking=By.xpath("//*[@id=\"navigation_bar\"]/div/div[2]/div[1]/ul/li/ul/li[3]/a");
 	
 	
