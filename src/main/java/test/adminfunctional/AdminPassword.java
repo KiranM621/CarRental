@@ -13,6 +13,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import pages.AdminLoginPage;
+import pages.AdminPanelPage;
 import utilities.PropertyReader;
 
 public class AdminPassword {
@@ -22,16 +24,19 @@ public class AdminPassword {
 	String admin_Name = PropertyReader.getProperty("admin_Name");
 	String admin_Password = PropertyReader.getProperty("admin_Password");
 	String admin_Invalid_Password = PropertyReader.getProperty("admin_Invalid_Password");
-	
+	AdminPanelPage adminPanelPageObject = null;
+	AdminLoginPage adminLoginPageObject = null;
+
 	WebDriver driver = null;
 	
 	@BeforeTest
 	
-	public void BeforeTest() {
+	public void beforeTest() {
 
 		System.setProperty("webdriver.chrome.driver","D:\\Java\\MiniProject\\resource\\chromedriver.exe");
 		driver = new ChromeDriver();
-
+		adminLoginPageObject = new AdminLoginPage(driver);
+		adminPanelPageObject = new AdminPanelPage(driver);
 
 
 	}
@@ -57,18 +62,17 @@ public class AdminPassword {
 
     	String success_Message = PropertyReader.getProperty("admin_Password_Change_Message");
 		
+		//Referencing from AdminPanelPageObject
+    	adminLoginPageObject.setUserName(admin_Name);
+		adminLoginPageObject.setPassword(admin_Password);
+        adminLoginPageObject.clickLogin();
 		
-    	driver.findElement(By.xpath("(//input[@name = 'username'])")).sendKeys(admin_Name);		
-		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Password);
-		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div/form/button")).click();
+		//Referencing from AdminPanelPageObject
+        adminPanelPageObject.setCurrentPassword(admin_Password);
+        adminPanelPageObject.setNewPassword(admin_Password);
+        adminPanelPageObject.setConfirmPassword(admin_Password);
+        adminPanelPageObject.clickOnSaveChange();
 		
-		
-		
-		
-		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Password);	
-		driver.findElement(By.xpath("(//input[@name = 'newpassword'])")).sendKeys(admin_Password);
-		driver.findElement(By.xpath("(//input[@name = 'confirmpassword'])")).sendKeys(admin_Password);
-		driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div/div/div/div[2]/form/div[7]/div/button")).click();
 		
 		
 		
@@ -86,26 +90,25 @@ public class AdminPassword {
     	String alertExpectedMsg = PropertyReader.getProperty("expected_Alert_Message");
 		
 		
-    	driver.findElement(By.xpath("(//input[@name = 'username'])")).sendKeys(admin_Name);		
-		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Password);
-		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div/form/button")).click();
+    	//Referencing from AdminPanelPageObject
+    	adminLoginPageObject.setUserName(admin_Name);
+		adminLoginPageObject.setPassword(admin_Password);
+        adminLoginPageObject.clickLogin();
 		
-		
-		
-		
-		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Password);
-		
-		driver.findElement(By.xpath("(//input[@name = 'newpassword'])")).sendKeys(admin_Invalid_Password);
 
-		driver.findElement(By.xpath("(//input[@name = 'confirmpassword'])")).sendKeys(admin_Password);
+		//Referencing from AdminPanelPageObject
+        adminPanelPageObject.setCurrentPassword(admin_Password);
+        adminPanelPageObject.setNewPassword(admin_Invalid_Password);
+        adminPanelPageObject.setConfirmPassword(admin_Password);
+		
 		
 	
 		WebDriverWait wait = new WebDriverWait(driver,20);
 		
-		driver.findElement(By.tagName("button")).click();
+        adminPanelPageObject.clickOnSaveChange();
 
 		
-	    String alertActualMsg =  driver.switchTo().alert().getText();		
+	    String alertActualMsg =  driver.switchTo().alert().getText();	
 	    driver.switchTo().alert().accept();
 
 	
@@ -122,22 +125,22 @@ public class AdminPassword {
        	String expected_Error_Message = PropertyReader.getProperty("invalid_Admin_Login_Message");
    		
 
-    	driver.findElement(By.xpath("(//input[@name = 'username'])")).sendKeys(admin_Name);		
-		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Password);
-		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div/form/button")).click();
+      //Referencing from AdminPanelPageObject
+    	adminLoginPageObject.setUserName(admin_Name);
+		adminLoginPageObject.setPassword(admin_Password);
+        adminLoginPageObject.clickLogin();
    		
 
    		
+      //Referencing from AdminPanelPageObject
+        adminPanelPageObject.setCurrentPassword(admin_Invalid_Password);
+        adminPanelPageObject.setNewPassword(admin_Invalid_Password);
+        adminPanelPageObject.setConfirmPassword(admin_Invalid_Password);
    		
    		
-   		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Invalid_Password);
-   		
-   		driver.findElement(By.xpath("(//input[@name = 'newpassword'])")).sendKeys(admin_Invalid_Password);
-
-   		driver.findElement(By.xpath("(//input[@name = 'confirmpassword'])")).sendKeys(admin_Invalid_Password);
 		WebDriverWait wait = new WebDriverWait(driver,20);
 
-		driver.findElement(By.tagName("button")).click();
+        adminPanelPageObject.clickOnSaveChange();
 
    		
    	    String actual_Error_Message =  driver.findElement(By.xpath("(//div[@class = 'errorWrap'])")).getText();;		

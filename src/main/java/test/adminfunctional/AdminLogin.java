@@ -12,6 +12,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import pages.AdminLoginPage;
+import pages.AdminPanelPage;
 import utilities.PropertyReader;
 
 public class AdminLogin {
@@ -22,17 +24,19 @@ public class AdminLogin {
 	String admin_Password = PropertyReader.getProperty("admin_Password");
 	String admin_Invalid_Password = PropertyReader.getProperty("admin_Invalid_Password");
 	
+	AdminPanelPage adminPanelPageObject = null;
+	AdminLoginPage adminLoginPageObject = null;
 	WebDriver driver = null;
 	
 	@BeforeTest
-	public void BeforeTest() {
+	public void beforeTest() {
 
 		System.setProperty("webdriver.chrome.driver",path);
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-
-
-
+		
+		adminLoginPageObject = new AdminLoginPage(driver);
+		adminPanelPageObject = new AdminPanelPage(driver);
 
 	}
 
@@ -49,18 +53,13 @@ public class AdminLogin {
 		driver.get(base_Url);
 		
 		
-		driver.findElement(By.xpath("(//input[@name = 'username'])")).sendKeys(admin_Name);
-		
+		// referencing through AdminLoginPage class
 
+		adminLoginPageObject.setUserName(admin_Name);
+		adminLoginPageObject.setPassword(admin_Password);
+        adminLoginPageObject.clickLogin();
 		
-		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Password);
-
-        
-		
-		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div/form/button")).click();
-		
-
-		
+			
 		String actual_Title = driver.getTitle();
 		
 		Assert.assertEquals(actual_Title, expected_Title);
@@ -75,12 +74,10 @@ public class AdminLogin {
 		
 		String expected_Title = PropertyReader.getProperty("admin_Login_Page_Title");
 		
-		driver.findElement(By.linkText("Account")).click();
-
+		//refrencing from AdminPanelPage
+		adminPanelPageObject.clickOnAccount();
+		adminPanelPageObject.clickOnLogout();
 		
-		driver.findElement(By.linkText("Logout")).click();
-		
-
 		String actual_Title = driver.getTitle();
 		
 		Assert.assertEquals(actual_Title, expected_Title);
@@ -91,26 +88,19 @@ public class AdminLogin {
 	@Test(priority = 3)
 	
 	public void invalidLogin() { 
-		driver.get(base_Url);
-		String expected_Message = "Invalid Details";
 		
 		driver.get(base_Url);
+		String expected_Message = PropertyReader.getProperty("admin_Invalid_Login_Message");
 		
-
-		driver.findElement(By.xpath("(//input[@name = 'username'])")).sendKeys(admin_Name);
+		driver.get(base_Url);
 		
-
-		
-		driver.findElement(By.xpath("(//input[@name = 'password'])")).sendKeys(admin_Invalid_Password);
-
-        
-		
-		driver.findElement(By.xpath("/html/body/div/div/div/div/div/div/div/form/button")).click();
-
-		
-		
+		// referencing through AdminLoginPage class
+		adminLoginPageObject.setUserName(admin_Name);
+		adminLoginPageObject.setPassword(admin_Invalid_Password);
+        adminLoginPageObject.clickLogin();
 		
 		String actual_Message = driver.switchTo().alert().getText();
+		driver.switchTo().alert().accept();
 		
 		Assert.assertEquals(actual_Message, expected_Message);
 
@@ -119,7 +109,7 @@ public class AdminLogin {
 	
 	@AfterTest
 	
-	public void AfterTest() { 
+	public void afterTest() { 
 		
 		driver.quit();
 		

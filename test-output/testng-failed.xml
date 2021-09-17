@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.adminfunctional.AdminLogin">
+      <class name="test.adminfunctional.AdminPassword">
         <methods>
-          <include name="invalidLogin"/>
-          <include name="validLogin"/>
+          <include name="changePasswordThree"/>
+          <include name="beforeMethod"/>
+          <include name="beforeTest"/>
           <include name="AfterTest"/>
-          <include name="adminLogout"/>
-          <include name="BeforeTest"/>
         </methods>
-      </class> <!-- test.adminfunctional.AdminLogin -->
+      </class> <!-- test.adminfunctional.AdminPassword -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
