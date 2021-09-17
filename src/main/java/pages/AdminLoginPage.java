@@ -7,8 +7,11 @@ public class AdminLoginPage {
 	
 	WebDriver driver = null;
 	
+	//username textfield
 	By admin_User = By.xpath("(//input[@name = 'username'])");
+	//password field
 	By admin_Password = By.xpath("(//input[@name = 'password'])");
+	//Login Button
 	By admin_Login = By.xpath("/html/body/div/div/div/div/div/div/div/form/button");
 	
 	

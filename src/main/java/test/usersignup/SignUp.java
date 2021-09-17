@@ -61,19 +61,19 @@ public class SignUp {
 		//Referencing From LoginSignupPage
 		loginSignupPageObject.clickOnLoginSignup();
 
-		loginSignupPageObject.clickSignup();
+		loginSignupPageObject.clickOnSignup();
 		
 		
 		
-		loginSignupPageObject.setUserName(user_Name);
-		loginSignupPageObject.setUserNumber(user_Number);
-		loginSignupPageObject.setUserEmail(user_Email);
-		loginSignupPageObject.setPasswrod(user_Password);
-		loginSignupPageObject.setConfirmPassword(user_Password);
+		loginSignupPageObject.setSignupUserName(user_Name);
+		loginSignupPageObject.setSignupUserNumber(user_Number);
+		loginSignupPageObject.setSignupUserEmail(user_Email);
+		loginSignupPageObject.setSignupPasswrod(user_Password);
+		loginSignupPageObject.setSignupConfirmPassword(user_Password);
 		
 		
 		
-		loginSignupPageObject.clickOnSubmit();
+		loginSignupPageObject.clickOnSignup_Button();
 		
 
 
@@ -96,13 +96,13 @@ public class SignUp {
 		
 		//Referencing From LoginSignupPages
 		loginSignupPageObject.clickOnLoginSignup();
-		loginSignupPageObject.clickSignup();
+		loginSignupPageObject.clickOnSignup();
 	
-		loginSignupPageObject.setUserName(user_Name);
-		loginSignupPageObject.setUserNumber(user_Number);
-		loginSignupPageObject.setUserEmail(user_Email);
-		loginSignupPageObject.setPasswrod(user_Password);
-		loginSignupPageObject.setConfirmPassword(user_Password);
+		loginSignupPageObject.setSignupUserName(user_Name);
+		loginSignupPageObject.setSignupUserNumber(user_Number);
+		loginSignupPageObject.setSignupUserEmail(user_Email);
+		loginSignupPageObject.setSignupPasswrod(user_Password);
+		loginSignupPageObject.setSignupConfirmPassword(user_Password);
 
 		
 		
