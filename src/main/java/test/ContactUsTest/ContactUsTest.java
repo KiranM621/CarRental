@@ -1,4 +1,4 @@
-package test.homepageTests;
+package test.ContactUsTest;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
@@ -13,12 +13,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import pages.ContactUs;
 import pages.HomePage;
 import utilities.PropertyReader;
 
-public class HomePageContactUs {
+public class ContactUsTest {
 	WebDriver driver;
-	HomePage objHomePage ;
+	ContactUs objContactUs ;
 	
 	 JavascriptExecutor js;
 	String driverPath = null;
@@ -44,29 +45,25 @@ public class HomePageContactUs {
 	  	driver.get(home_URL);//getURL
 		driver.manage().window().maximize();
 		
-		Thread.sleep(5000);
-		objHomePage =new HomePage(driver);
+		objContactUs =new ContactUs(driver);
 		
 		//click on contact-us
-		objHomePage.clickContactus();
+		objContactUs.clickContactus();
        // driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Thread.sleep(5000);
   
-		objHomePage.contactusEnterfullname(contactus_Fullname);
-		objHomePage.contactusEnteremail(contactus_Email);
-		objHomePage.contactusEnterphone(contactus_Mob);
-		objHomePage.contactusMessage(contactus_Msg);
-		Thread.sleep(5000);
+        objContactUs.contactusEnterfullname(contactus_Fullname);
+        objContactUs.contactusEnteremail(contactus_Email);
+        objContactUs.contactusEnterphone(contactus_Mob);
+        objContactUs.contactusMessage(contactus_Msg);
         
 		
-		//objHomePage.clickOnsend();
+//		objContactUs.clickOnsend();
       //  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-       Thread.sleep(5000);
        
        //validation
        
-     // String msg=  driver.findElement(By.xpath("/html/body/section[2]/div/div/div[1]/div[1]")).getText();
-	//  assertEquals("SUCCESS:Query Sent. We will contact you shortly",msg);
+//        String msg=  driver.findElement(By.xpath("/html/body/section[2]/div/div/div[1]/div[1]")).getText();
+//        assertEquals("SUCCESS:Query Sent. We will contact you shortly",msg);
 	  
   }
   

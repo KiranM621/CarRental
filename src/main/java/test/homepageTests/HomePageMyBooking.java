@@ -50,18 +50,15 @@ public class HomePageMyBooking {
 		objLoginSignupPage.clickOnLoginSignup();
 		
 		driver.manage().window().maximize();
-		Thread.sleep(5000);
 		//enter email
-		objLoginSignupPage.enterUserName(user_Email);
+		objLoginSignupPage.setLoginUserName(user_Email);
 		
 		//enter password
-		objLoginSignupPage.enterPasswrod(user_Password);
-	   Thread.sleep(5000);
+		objLoginSignupPage.setLoginPasswrod(user_Password);
 	   
 	   // click on login button
-	   	objLoginSignupPage.login();
+	   	objLoginSignupPage.clickOnLogin();
 		
-		Thread.sleep(5000);
 		objHomePge =new HomePage(driver);
 	
 		
