@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class BookCarPage {
+public class CarListingPage {
 	
 	WebDriver driver;
 	//Home page car list button 
@@ -36,7 +36,7 @@ public class BookCarPage {
 	
 	
 	
-	public BookCarPage (WebDriver driver) {
+	public CarListingPage (WebDriver driver) {
 		this.driver = driver;
 		}
 		
@@ -74,17 +74,17 @@ public class BookCarPage {
 		
 	}
 	
-	public void enterFromdate(String arg1) {
+	public void setFromdate(String arg1) {
 		driver.findElement(book_Car_Fromdate).sendKeys(arg1);
 		}
 	
 	
-	public void enterTodate(String arg1) {
+	public void setTodate(String arg1) {
 		driver.findElement(book_Car_Todate).sendKeys(arg1);
 		}
 	
 	
-	public void enterMessage(String arg1) {
+	public void setMessage(String arg1) {
 		driver.findElement(book_Car_Msg).sendKeys(arg1);
 		}
 

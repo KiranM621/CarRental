@@ -8,10 +8,10 @@ public class AdminLoginPage {
 	WebDriver driver = null;
 	
 	//username textfield
-	By admin_User = By.xpath("(//input[@name = 'username'])");
+	By admin_User = By.xpath("/html/body/div/div/div/div/div/div/div/form/input[1]");
 	//password field
-	By admin_Password = By.xpath("(//input[@name = 'password'])");
-	//Login Button
+	By admin_Password = By.xpath("/html/body/div/div/div/div/div/div/div/form/input[2]");
+	//Login Button  (//input[@name = 'password'])
 	By admin_Login = By.xpath("/html/body/div/div/div/div/div/div/div/form/button");
 	
 	
