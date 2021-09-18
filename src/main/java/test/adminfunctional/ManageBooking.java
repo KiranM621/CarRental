@@ -14,20 +14,22 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pages.AdminPage;
+import pages.AdminLoginPage;
+import pages.AdminPanelPage;
 import pages.HomePage;
 import pages.LoginSignupPage;
 import utilities.PropertyReader;
 
-public class AdminPageMyBooking {
+public class ManageBooking {
 	WebDriver driver;
 	 JavascriptExecutor js;
 	String driverPath;
-	AdminPage objAdminPage;
+	AdminPanelPage objAdminPanelPage;
+	AdminLoginPage objAdminLoginPage;
 	LoginSignupPage objLoginSignupPage;
 	HomePage objHomePage;
 	
-	String admin_URL,home_URL,Admin_username,email,password;
+	String admin_URL,home_URL,admin_Name,user_Email,password;
 	
 	@BeforeMethod
 	 public void beforeMethod() throws InterruptedException, IOException {
@@ -35,69 +37,60 @@ public class AdminPageMyBooking {
 			  driverPath = PropertyReader.getProperty("Chrome_Driver_Path");
 			  admin_URL=PropertyReader.getProperty("admin_URL");
 			  home_URL=PropertyReader.getProperty("home_URL");
-			  email=PropertyReader.getProperty("user_Email");
-			  Admin_username=PropertyReader.getProperty("admin_Name");
+			  user_Email=PropertyReader.getProperty("user_Email");
+			  admin_Name=PropertyReader.getProperty("admin_Name");
 			  password=PropertyReader.getProperty("user_Password");
 			 
 			  System.setProperty("webdriver.chrome.driver", driverPath);
 				driver = new ChromeDriver();
 				 js = (JavascriptExecutor) driver;
+				 objAdminPanelPage =new AdminPanelPage(driver);
+					objLoginSignupPage =new LoginSignupPage(driver);
+
 				 
 		  }
 		
   @Test
-public void myBooking() throws InterruptedException {
-	  driver.get(admin_URL);//load url
-	  Thread.sleep(4000);
-	  
-	  objAdminPage =new AdminPage(driver);
+public void manageBooking() throws InterruptedException {
+	  driver.get(admin_URL);//load url	  
 	  
 	  //enter username ,password 
-	  objAdminPage.enterUsername(Admin_username);
-	  objAdminPage.enterPassword(password);
+	  objAdminLoginPage.setUserName(admin_Name);
+	  objAdminLoginPage.setPassword(password);
 	 
 		//click on login 
-	  objAdminPage.clickOnLogin();
-		Thread.sleep(4000);
+	  objAdminLoginPage.clickLogin();
 		
 		//click on manage booking
-		objAdminPage.clickOnManageBooking();
-		Thread.sleep(4000);
+		objAdminPanelPage.clickOnManageBooking();
 
 		//click on confirmed button
-		objAdminPage.clickOnconfirm();
+		objAdminPanelPage.clickOnconfirm();
 		
 		Alert alert=driver.switchTo().alert();
-
-	  
-	  				Thread.sleep(5000);
+  
 				alert.accept();
 		
 	//check whether status On home page of my booking it updated or not	
-				   Thread.sleep(5000);
 
 		//navigate to home page of carrental
 		driver.navigate().to(home_URL);
 		
-		
-		
-		Thread.sleep(5000);
-		objLoginSignupPage =new LoginSignupPage(driver);
-		
+				
 		//click on login/signup btn
 		objLoginSignupPage.clickOnLoginSignup();
 		
 		driver.manage().window().maximize();
 		Thread.sleep(5000);
 		//enter email
-		objLoginSignupPage.enterUserName(email);
+		objLoginSignupPage.setLoginUserName(user_Email);
 		
 		//enter password
-		objLoginSignupPage.enterPasswrod(password);
+		objLoginSignupPage.setLoginPasswrod(password);
 	   Thread.sleep(5000);
 	   
 	   // click on login button
-	   objLoginSignupPage.login();
+	   objLoginSignupPage.clickOnLogin();
 	   objHomePage =new HomePage(driver);
 
 		//click on profile

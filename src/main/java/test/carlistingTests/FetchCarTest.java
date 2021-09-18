@@ -1,4 +1,4 @@
-package test.homepageTests;
+package test.carlistingTests;
 
 import static org.testng.Assert.assertEquals;
 
@@ -15,13 +15,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import pages.CarListingPage;
 import pages.HomePage;
 import utilities.PropertyReader;
 
 
-public class HomePageCarListing {
+public class FetchCarTest {
 	WebDriver driver;
-	HomePage objHomePage ;
+	CarListingPage objCarListingPage;
 	
 	 JavascriptExecutor js;
 	String driverPath = null,home_URL;
@@ -37,6 +38,8 @@ public void beforeMethod() throws InterruptedException, IOException {
 			  System.setProperty("webdriver.chrome.driver", driverPath);
 				driver = new ChromeDriver();
 				 js = (JavascriptExecutor) driver;
+				objCarListingPage =new CarListingPage(driver);
+
 				 
  }
 		 
@@ -47,25 +50,19 @@ public void beforeMethod() throws InterruptedException, IOException {
 	
 	  		driver.get(home_URL);//getURL
 			driver.manage().window().maximize();
-			Thread.sleep(5000);
 			
-			objHomePage =new HomePage(driver);
 			
 			//click on carlisting btn
-			objHomePage.clickCarListingbtn();
-			 Thread.sleep(5000);
+			objCarListingPage.clickCarListingbtn();
 			
 			 js.executeScript("window.scrollBy(0,350)", "");//scroll down
-			 Thread.sleep(5000);
 			 
-			 objHomePage.selectCarAndFuel();
-			 Thread.sleep(8000);
+			 objCarListingPage.selectCarAndFuel();
 			 
 			// click search car
-			 objHomePage.clickSearchCar();
+			 objCarListingPage.clickSearchCar();
 			 js.executeScript("window.scrollBy(0,350)", "");//scroll down
 
-			 Thread.sleep(5000);
 
 			 
 			 //validation
