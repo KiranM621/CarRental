@@ -7,10 +7,15 @@ public class ForgotPasswordPage {
 	
 	WebDriver driver = null;
 	
+	// Email field on forgot password page
 	By user_Email =  By.xpath("//*[@id=\"forgotpassword\"]/div/div/div[2]/div/div/div/form/div[1]/input");
+	// Contact Number field on forgot password page
 	By user_Number = By.xpath("(//input[@name='mobile'])");
+	// New Password field on forgot password page
 	By user_NewPassword = By.xpath("(//input[@name='newpassword'])");
+	// Confirm Password field on forgot password page
 	By user_ConfirmPassword = By.xpath("//*[@id=\"forgotpassword\"]/div/div/div[2]/div/div/div/form/div[4]/input");
+	// ResetPassword button on forgot password page
 	By reset_Password = By.xpath("//*[@id=\"forgotpassword\"]/div/div/div[2]/div/div/div/form/div[5]/input");
 	
 	
