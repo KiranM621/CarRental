@@ -14,7 +14,6 @@ import org.testng.annotations.Test;
 
 
 import pages.LoginSignupPage;
-import pages.ForgotPasswordPage;
 import utilities.PropertyReader;
 
 /**
@@ -23,7 +22,7 @@ import utilities.PropertyReader;
  */
 public class SignUp {
 	WebDriver driver;
-	LoginSignupPage objLoginSignupPage ;
+	//LoginSignupPage objLoginSignupPage ;
 	
 	JavascriptExecutor js;
 	String driverPath = null;
@@ -38,12 +37,14 @@ public class SignUp {
 	 System.setProperty("webdriver.chrome.driver", driverPath);
 	 driver = new ChromeDriver();
 	 js = (JavascriptExecutor) driver;
+	 
   }
 	 @Test
 	  public void signUp() throws InterruptedException {
 			driver.get(home_URL);//getURL
 			Thread.sleep(2000);
-			objLoginSignupPage=new LoginSignupPage(driver);
+			
+			LoginSignupPage objLoginSignupPage=new LoginSignupPage(driver);
 			
 			//click on login/signup btn
 			objLoginSignupPage.clickOnLoginSignup();
