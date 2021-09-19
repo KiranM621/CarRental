@@ -58,7 +58,7 @@ public class SignUp {
 	public Object[][] getData() { 
 		
 		
-		Object data[][] = testData("D:\\Java\\CarRentalProject\\src\\main\\resources\\data\\Data.xlsx","Signup");
+		Object data[][] = testData("C:\\Users\\pooja_shitole\\Workspace1\\CarRental\\src\\main\\resources\\data\\Data.xlsx","Signup");
 		return data;
 		
 	}

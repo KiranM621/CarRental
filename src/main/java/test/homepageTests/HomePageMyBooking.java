@@ -46,7 +46,6 @@ public class HomePageMyBooking {
   @Test
   public void homePageMyBookingTest() throws InterruptedException {
 	  driver.get(home_URL);//getURL
-		driver.manage().window().maximize();
 		WebDriverWait wait = new WebDriverWait(driver,30);
 
 		

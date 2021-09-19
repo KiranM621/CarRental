@@ -33,7 +33,7 @@ public class AdminPassword {
 	
 	public void beforeTest() {
 
-		System.setProperty("webdriver.chrome.driver","D:\\Java\\MiniProject\\resource\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",path);
 		driver = new ChromeDriver();
 		adminLoginPageObject = new AdminLoginPage(driver);
 		adminPanelPageObject = new AdminPanelPage(driver);

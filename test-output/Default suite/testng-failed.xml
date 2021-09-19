@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.adminfunctional.ManageBooking">
+      <class name="test.adminfunctional.AdminPassword">
         <methods>
+          <include name="changePasswordTwo"/>
+          <include name="changePasswordThree"/>
+          <include name="beforeMethod"/>
+          <include name="changePasswordOne"/>
           <include name="beforeTest"/>
-          <include name="manageBooking"/>
-          <include name="afterTest"/>
+          <include name="AfterTest"/>
         </methods>
-      </class> <!-- test.adminfunctional.ManageBooking -->
+      </class> <!-- test.adminfunctional.AdminPassword -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

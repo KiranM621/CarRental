@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeTest"/>
           <include name="AfterTest"/>
-          <include name="signupTestValid"/>
+          <include name="signupTestValid" invocation-numbers="0 1"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- test.usersignup.SignUp -->
