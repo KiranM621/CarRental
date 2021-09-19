@@ -25,11 +25,19 @@ public class ManageBooking {
 	 JavascriptExecutor js;
 	String driverPath;
 	AdminPanelPage objAdminPanelPage;
-	AdminLoginPage objAdminLoginPage;
+	AdminPanelPage objAdminLoginPage;
 	LoginSignupPage objLoginSignupPage;
 	HomePage objHomePage;
 	
 	String admin_URL,home_URL,admin_Name,user_Email,password;
+	
+	@BeforeTest
+	
+	public void beforeTest() { 
+		 System.setProperty("webdriver.chrome.driver", driverPath);
+		 driver = new ChromeDriver();
+		 objAdminLoginPage = new AdminPanelPage(driver);
+	}
 	
 	@BeforeMethod
 	 public void beforeMethod() throws InterruptedException, IOException {

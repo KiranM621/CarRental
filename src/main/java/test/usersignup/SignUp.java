@@ -12,9 +12,11 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.LoginSignupPage;
+import utilities.ExcelUtils;
 import utilities.PropertyReader;
 
 public class SignUp {
@@ -49,9 +51,51 @@ public class SignUp {
 
 	}
 	
-	@Test(priority=1)
 	
-	public void signupTestValid() { 
+
+	
+	@DataProvider(name="testData")
+	public Object[][] getData() { 
+		
+		
+		Object data[][] = testData("D:\\Java\\CarRentalProject\\src\\main\\resources\\data\\Data.xlsx","Signup");
+		return data;
+		
+	}
+	
+	
+	
+	
+	public static Object[][] testData(String path,String sheet) { 
+		
+		ExcelUtils excel = new ExcelUtils(path,sheet);
+		int row_Count = excel.getRowCount();
+		int col_Count = excel.getColumnCount();
+
+		
+		Object data[][] = new Object[row_Count - 1][col_Count];
+		
+		for(int i = 1 ; i < row_Count ; i++) { 
+			
+			
+			for(int j = 0 ; j < col_Count ; j++) { 
+				
+
+				String cellData = excel.getCellValue(i, j);
+				data[i-1][j] = cellData;
+				
+			}
+			
+		}
+		
+		return data;
+		 
+		
+	}	
+	
+	@Test(priority=1,dataProvider="testData")
+	
+	public void signupTestValid(String name,String number,String email,String password,String confirmPassword) { 
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		String expected_Message = PropertyReader.getProperty("registration_Success");
 		
@@ -65,11 +109,11 @@ public class SignUp {
 		
 		
 		
-		loginSignupPageObject.setSignupUserName(user_Name);
-		loginSignupPageObject.setSignupUserNumber(user_Number);
-		loginSignupPageObject.setSignupUserEmail(user_Email);
-		loginSignupPageObject.setSignupPasswrod(user_Password);
-		loginSignupPageObject.setSignupConfirmPassword(user_Password);
+		loginSignupPageObject.setSignupUserName(name);
+		loginSignupPageObject.setSignupUserNumber(number);
+		loginSignupPageObject.setSignupUserEmail(email);
+		loginSignupPageObject.setSignupPasswrod(password);
+		loginSignupPageObject.setSignupConfirmPassword(confirmPassword);
 		
 		
 		
