@@ -1,192 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-19T13:54:45 IST" name="Default suite" finished-at="2021-09-19T13:54:45 IST" duration-ms="58">
+  <suite started-at="2021-09-19T14:07:11 IST" name="Default suite" finished-at="2021-09-19T14:07:15 IST" duration-ms="3896">
     <groups>
     </groups>
-    <test started-at="2021-09-19T13:54:45 IST" name="Default test" finished-at="2021-09-19T13:54:45 IST" duration-ms="58">
+    <test started-at="2021-09-19T14:07:11 IST" name="Default test" finished-at="2021-09-19T14:07:15 IST" duration-ms="3896">
       <class name="test.adminfunctional.ManageBooking">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.adminfunctional.ManageBooking@306e95ec]" started-at="2021-09-19T13:54:45 IST" name="beforeTest" finished-at="2021-09-19T13:54:45 IST" duration-ms="8" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at java.base/java.util.concurrent.ConcurrentHashMap.putVal(ConcurrentHashMap.java:1011)
-at java.base/java.util.concurrent.ConcurrentHashMap.put(ConcurrentHashMap.java:1006)
-at java.base/java.util.Properties.put(Properties.java:1334)
-at java.base/java.util.Properties.setProperty(Properties.java:229)
-at java.base/java.lang.System.setProperty(System.java:915)
-at test.adminfunctional.ManageBooking.beforeTest(ManageBooking.java:37)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
-at org.testng.TestRunner.beforeRun(TestRunner.java:627)
-at org.testng.TestRunner.run(TestRunner.java:589)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.adminfunctional.ManageBooking@21e360a]" started-at="2021-09-19T14:07:11 IST" name="beforeTest" finished-at="2021-09-19T14:07:14 IST" duration-ms="2993" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.adminfunctional.ManageBooking@306e95ec]" started-at="2021-09-19T13:54:45 IST" name="beforeMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1632039885978" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="manageBooking()[pri:0, instance:test.adminfunctional.ManageBooking@306e95ec]" started-at="2021-09-19T13:54:45 IST" name="manageBooking" finished-at="2021-09-19T13:54:45 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at java.base/java.util.concurrent.ConcurrentHashMap.putVal(ConcurrentHashMap.java:1011)
-at java.base/java.util.concurrent.ConcurrentHashMap.put(ConcurrentHashMap.java:1006)
-at java.base/java.util.Properties.put(Properties.java:1334)
-at java.base/java.util.Properties.setProperty(Properties.java:229)
-at java.base/java.lang.System.setProperty(System.java:915)
-at test.adminfunctional.ManageBooking.beforeTest(ManageBooking.java:37)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
-at org.testng.TestRunner.beforeRun(TestRunner.java:627)
-at org.testng.TestRunner.run(TestRunner.java:589)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- manageBooking -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.adminfunctional.ManageBooking@306e95ec]" started-at="2021-09-19T13:54:45 IST" name="afterMethod" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1632039885984" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- test.adminfunctional.ManageBooking -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
-=======
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2021-09-19T06:48:32 IST" name="Test-Suite" finished-at="2021-09-19T06:48:59 IST" duration-ms="27392">
-    <groups>
-    </groups>
-    <test started-at="2021-09-19T06:48:32 IST" name="TestLogin" finished-at="2021-09-19T06:48:59 IST" duration-ms="27392">
-      <class name="test.usersignup.ForgotPassword">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.usersignup.ForgotPassword@212b5695]" started-at="2021-09-19T06:48:32 IST" name="beforeTest" finished-at="2021-09-19T06:48:36 IST" duration-ms="3542" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.usersignup.ForgotPassword@212b5695]" started-at="2021-09-19T06:48:54 IST" name="beforeMethod" finished-at="2021-09-19T06:48:55 IST" duration-ms="1118" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="changePasswordOne()[pri:1, instance:test.usersignup.ForgotPassword@212b5695]" started-at="2021-09-19T06:48:55 IST" name="changePasswordOne" finished-at="2021-09-19T06:48:56 IST" duration-ms="1151" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- changePasswordOne -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.usersignup.ForgotPassword@212b5695]" started-at="2021-09-19T06:48:56 IST" name="beforeMethod" finished-at="2021-09-19T06:48:56 IST" duration-ms="162" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="changePasswordTwo()[pri:2, instance:test.usersignup.ForgotPassword@212b5695]" started-at="2021-09-19T06:48:56 IST" name="changePasswordTwo" finished-at="2021-09-19T06:48:57 IST" duration-ms="889" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- changePasswordTwo -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.usersignup.ForgotPassword@212b5695]" started-at="2021-09-19T06:48:57 IST" name="afterTest" finished-at="2021-09-19T06:48:58 IST" duration-ms="818" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- test.usersignup.ForgotPassword -->
-      <class name="test.userlogin.UserLogin">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.userlogin.UserLogin@50ad3bc1]" started-at="2021-09-19T06:48:39 IST" name="beforeTest" finished-at="2021-09-19T06:48:42 IST" duration-ms="3325" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.userlogin.UserLogin@50ad3bc1]" started-at="2021-09-19T06:48:42 IST" name="beforeMethod" finished-at="2021-09-19T06:48:44 IST" duration-ms="1207" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="loginWithInValidDetailsTest()[pri:1, instance:test.userlogin.UserLogin@50ad3bc1]" started-at="2021-09-19T06:48:44 IST" name="loginWithInValidDetailsTest" finished-at="2021-09-19T06:48:49 IST" duration-ms="5652" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginWithInValidDetailsTest -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.userlogin.UserLogin@50ad3bc1]" started-at="2021-09-19T06:48:49 IST" name="beforeMethod" finished-at="2021-09-19T06:48:49 IST" duration-ms="137" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="loginWithValidDetailsTest()[pri:2, instance:test.userlogin.UserLogin@50ad3bc1]" started-at="2021-09-19T06:48:49 IST" name="loginWithValidDetailsTest" finished-at="2021-09-19T06:48:50 IST" duration-ms="752" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginWithValidDetailsTest -->
-        <test-method is-config="true" signature="AfterTest()[pri:0, instance:test.userlogin.UserLogin@50ad3bc1]" started-at="2021-09-19T06:48:59 IST" name="AfterTest" finished-at="2021-09-19T06:48:59 IST" duration-ms="893" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterTest -->
-      </class> <!-- test.userlogin.UserLogin -->
-      <class name="test.usersignup.SignUp">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.usersignup.SignUp@3514a4c0]" started-at="2021-09-19T06:48:36 IST" name="beforeTest" finished-at="2021-09-19T06:48:39 IST" duration-ms="3379" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.usersignup.SignUp@3514a4c0]" started-at="2021-09-19T06:48:50 IST" name="beforeMethod" finished-at="2021-09-19T06:48:51 IST" duration-ms="1101" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="signupTestValid()[pri:1, instance:test.usersignup.SignUp@3514a4c0]" started-at="2021-09-19T06:48:51 IST" name="signupTestValid" finished-at="2021-09-19T06:48:52 IST" duration-ms="1262" status="FAIL">
-          <exception class="org.openqa.selenium.NoAlertPresentException">
+        <test-method signature="manageBooking()[pri:0, instance:test.adminfunctional.ManageBooking@21e360a]" started-at="2021-09-19T14:07:14 IST" name="manageBooking" finished-at="2021-09-19T14:07:14 IST" duration-ms="175" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such alert
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//input[@name = 'username'])"}
   (Session info: chrome=93.0.4577.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ARPGL005794', ip: '192.168.93.121', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+System info: host: 'ARPGL006256', ip: '192.168.42.124', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\POOJA_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64391}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 8291cf62194217ed46dc3526dc4a0c0b]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\KIRANK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57334}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 588d4788c39b95b18b92bfe347047eab
+*** Element info: {Using=xpath, value=(//input[@name = 'username'])}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoAlertPresentException: no such alert
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//input[@name = 'username'])"}
   (Session info: chrome=93.0.4577.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ARPGL005794', ip: '192.168.93.121', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+System info: host: 'ARPGL006256', ip: '192.168.42.124', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\POOJA_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64391}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 8291cf62194217ed46dc3526dc4a0c0b
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\KIRANK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57334}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 588d4788c39b95b18b92bfe347047eab
+*** Element info: {Using=xpath, value=(//input[@name = 'username'])}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -198,9 +45,12 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:932)
-at test.usersignup.SignUp.signupTestValid(SignUp.java:80)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at pages.AdminLoginPage.setUserName(AdminLoginPage.java:27)
+at test.adminfunctional.ManageBooking.manageBooking(ManageBooking.java:62)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -231,24 +81,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoAlertPresentException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- signupTestValid -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.usersignup.SignUp@3514a4c0]" started-at="2021-09-19T06:48:52 IST" name="beforeMethod" finished-at="2021-09-19T06:48:53 IST" duration-ms="127" status="PASS">
+        </test-method> <!-- manageBooking -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.adminfunctional.ManageBooking@21e360a]" started-at="2021-09-19T14:07:14 IST" name="afterTest" finished-at="2021-09-19T14:07:15 IST" duration-ms="676" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="signupTestInvalid()[pri:2, instance:test.usersignup.SignUp@3514a4c0]" started-at="2021-09-19T06:48:53 IST" name="signupTestInvalid" finished-at="2021-09-19T06:48:54 IST" duration-ms="992" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signupTestInvalid -->
-        <test-method is-config="true" signature="AfterTest()[pri:0, instance:test.usersignup.SignUp@3514a4c0]" started-at="2021-09-19T06:48:58 IST" name="AfterTest" finished-at="2021-09-19T06:48:59 IST" duration-ms="819" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterTest -->
-      </class> <!-- test.usersignup.SignUp -->
-    </test> <!-- TestLogin -->
-  </suite> <!-- Test-Suite -->
->>>>>>> 72bc18ebd767d122a15af9063664548b38d19a2d
+        </test-method> <!-- afterTest -->
+      </class> <!-- test.adminfunctional.ManageBooking -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
