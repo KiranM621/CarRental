@@ -1,12 +1,21 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Test-Suite" >
    <test name="TestLogin" >
-       <classes> 
+      <classes> 
+          
           <class name="test.userlogin.UserLogin" />
-          <class name="test.usersignup.SignUp" />
-          <class name="test.usersignup.ForgotPassword"/>
+          <class name="test.usersignup.SignUp"/> 
+          <class name="test.adminfunctional.AdminLogin"/> 
+          <class name="test.usersignup.ForgotPassword"/>   
+      	   <class name="test.adminfunctional.AdminPassword"/>          
+           <class name="test.ContactUsTest.ContactUsTest"/>
+        	<class name="test.homepageTests.HomePageMyBooking"/>
+           <class name="test.carlistingTests.FetchCarTest"/>
+            <class name="test.carlistingTests.BookCarTests"/>
+         	<class name="test.adminfunctional.ManageBooking"/>
          
        </classes>
+
    </test>
  </suite>
      
