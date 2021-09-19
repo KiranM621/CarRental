@@ -9,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -25,8 +26,8 @@ public class ContactUsTest {
 	String driverPath = null;
 	String home_URL,user_Email,user_Password,contactus_Fullname,contactus_Mob,contactus_Email,contactus_Msg;
 	
-@BeforeMethod
-	 public void beforeMethod() throws InterruptedException, IOException {
+@BeforeTest
+	 public void beforeTest() throws InterruptedException, IOException {
 			
 			driverPath = PropertyReader.getProperty("Chrome_Driver_Path");
 			home_URL=PropertyReader.getProperty("home_URL");
@@ -44,12 +45,10 @@ public class ContactUsTest {
 		
 	  	driver.get(home_URL);//getURL
 		driver.manage().window().maximize();
-		
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 		objContactUs =new ContactUs(driver);
-		
-		//click on contact-us
 		objContactUs.clickContactus();
-       // driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
   
         objContactUs.contactusEnterfullname(contactus_Fullname);
         objContactUs.contactusEnteremail(contactus_Email);
@@ -58,7 +57,6 @@ public class ContactUsTest {
         
 		
 //		objContactUs.clickOnsend();
-      //  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
        
        //validation
        
@@ -68,8 +66,8 @@ public class ContactUsTest {
   }
   
   
-  @AfterMethod
-  public void afterMethod() {
+  @AfterTest
+  public void afterTest() {
 	  driver.quit();
   }
 

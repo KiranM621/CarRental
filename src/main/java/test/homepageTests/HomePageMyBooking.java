@@ -8,7 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -26,8 +28,8 @@ public class HomePageMyBooking {
 	String driverPath = null;
 	String home_URL,user_Email,user_Password;
 	
-	@BeforeMethod
-	 public void beforeMethod() throws InterruptedException, IOException {
+	@BeforeTest
+	 public void beforeTest() throws InterruptedException, IOException {
 			
 		driverPath = PropertyReader.getProperty("Chrome_Driver_Path");
 		  user_Email=PropertyReader.getProperty("user_Email");
@@ -36,6 +38,8 @@ public class HomePageMyBooking {
 			  System.setProperty("webdriver.chrome.driver", driverPath);
 			  driver = new ChromeDriver();
 			  js = (JavascriptExecutor) driver;
+				objLoginSignupPage =new LoginSignupPage(driver);
+				objHomePge =new HomePage(driver);
 				 
 		  }
 
@@ -43,29 +47,18 @@ public class HomePageMyBooking {
   public void homePageMyBookingTest() throws InterruptedException {
 	  driver.get(home_URL);//getURL
 		driver.manage().window().maximize();
+		WebDriverWait wait = new WebDriverWait(driver,30);
+
 		
-		objLoginSignupPage =new LoginSignupPage(driver);
-		
-		//click on login/signup btn
 		objLoginSignupPage.clickOnLoginSignup();
 		
 		driver.manage().window().maximize();
-		//enter email
 		objLoginSignupPage.setLoginUserName(user_Email);
-		
-		//enter password
 		objLoginSignupPage.setLoginPasswrod(user_Password);
-	   
-	   // click on login button
 	   	objLoginSignupPage.clickOnLogin();
 		
-		objHomePge =new HomePage(driver);
-	
 		
-	   	//click on profile
 	    objHomePge.clickOnprofile();
-		
-		//click my booking
 	    objHomePge.clickOnMyBooking();
 		
 		
@@ -77,8 +70,8 @@ public class HomePageMyBooking {
 	  
   }
   
-  @AfterMethod
-  public void afterMethod() {
+  @AfterTest
+  public void afteTest() {
 	  driver.quit();
   }
 

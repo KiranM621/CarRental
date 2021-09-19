@@ -3,16 +3,6 @@
 <suite name="Failed suite [Test-Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="TestLogin(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="test.adminfunctional.ManageBooking">
-        <methods>
-          <include name="beforeTest"/>
-          <include name="afterMethod"/>
-          <include name="manageBooking"/>
-          <include name="beforeMethod"/>
-        </methods>
-      </class> <!-- test.adminfunctional.ManageBooking -->
-=======
       <class name="test.usersignup.SignUp">
         <methods>
           <include name="beforeTest"/>
@@ -21,7 +11,6 @@
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- test.usersignup.SignUp -->
->>>>>>> 72bc18ebd767d122a15af9063664548b38d19a2d
     </classes>
   </test> <!-- TestLogin(failed) -->
 </suite> <!-- Failed suite [Test-Suite] -->
