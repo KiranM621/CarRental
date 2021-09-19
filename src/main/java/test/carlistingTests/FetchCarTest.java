@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -28,8 +29,8 @@ public class FetchCarTest {
 	String driverPath = null,home_URL;
 	String brand_Name,fuel_Name;
 	
-@BeforeMethod
-public void beforeMethod() throws InterruptedException, IOException {
+@BeforeTest
+public void beforeTest() throws InterruptedException, IOException {
 	
 			  driverPath = PropertyReader.getProperty("Chrome_Driver_Path");
 			  home_URL=PropertyReader.getProperty("home_URL");
@@ -50,9 +51,8 @@ public void beforeMethod() throws InterruptedException, IOException {
 	
 	  		driver.get(home_URL);//getURL
 			driver.manage().window().maximize();
-			
-			
-			//click on carlisting btn
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
 			objCarListingPage.clickCarListingbtn();
 			
 			 js.executeScript("window.scrollBy(0,350)", "");//scroll down
@@ -77,8 +77,8 @@ public void beforeMethod() throws InterruptedException, IOException {
   
   
   
-  @AfterMethod
-  public void afterMethod() {
+  @AfterTest
+  public void afterTest() {
 	  driver.quit();
   }
 

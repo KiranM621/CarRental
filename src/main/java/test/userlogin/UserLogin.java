@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -28,8 +29,8 @@ public class UserLogin {
 	String driverPath = null;
 	String home_URL,user_Email,user_Password,wrong_Password;
 	
-	@BeforeMethod
-	 public void beforeMethod() throws InterruptedException, IOException {
+	@BeforeTest
+	 public void beforeTest() throws InterruptedException, IOException {
 			
 
 		driverPath = PropertyReader.getProperty("Chrome_Driver_Path");
@@ -40,62 +41,34 @@ public class UserLogin {
 		 System.setProperty("webdriver.chrome.driver", driverPath);
 				driver = new ChromeDriver();
 				 js = (JavascriptExecutor) driver;
+					objLoginSignupPage =new LoginSignupPage(driver);
+
 				 
 		  }
-
-	@Test(priority=1)
-	public void loginWithValidDetailsTest() throws InterruptedException {
-		driver.get(home_URL);//getURL
-				
-		Thread.sleep(5000);
-		objLoginSignupPage =new LoginSignupPage(driver);
-		
-		//click on login/signup btn
-		objLoginSignupPage.clickOnLoginSignup();
-		
-		driver.manage().window().maximize();
-		//enter email
-		objLoginSignupPage.setLoginUserName(user_Email);
-		
-		//enter password
-		objLoginSignupPage.setLoginPasswrod(user_Password);
-	   Thread.sleep(3000);
-	   
-	   // click on login button
-	   	objLoginSignupPage.clickOnLogin();
-		
-	   	//validation of login
-		Thread.sleep(5000);
-		
-		String welcomMsg=driver.findElement(By.xpath("/html/body/header/div/div/div/div[2]/div")).getText();
-		Assert.assertTrue(welcomMsg.contains("Welcome To Car rental portal"));
-		
-	}
 	
-	@Test(priority=2)
+	@BeforeMethod
+	public void beforeMethod() {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+
+		
+		driver.get(home_URL);
+		
+
+	}
+
+	
+	@Test(priority=1)
 	public void loginWithInValidDetailsTest() throws InterruptedException {
 		
-			driver.navigate().to(home_URL);
 		
-		Thread.sleep(5000);
-		objLoginSignupPage =new LoginSignupPage(driver);
-		
-		//click on login/signup btn
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		objLoginSignupPage.clickOnLoginSignup();
 		
 		driver.manage().window().maximize();
-		//enter email
 		objLoginSignupPage.setLoginUserName(user_Email);
-		
-		//enter password
 		objLoginSignupPage.setLoginPasswrod(wrong_Password);
-	   Thread.sleep(3000);
-	   
-	   // click on login button
+	 
 	   	objLoginSignupPage.clickOnLogin();
-		
-	   	//validation of login
-		Thread.sleep(5000);
 		
 		
 		Alert alert=driver.switchTo().alert();
@@ -106,10 +79,37 @@ public class UserLogin {
 	
 	}
 	
-	@AfterMethod
-	  public void afterMethod() {
-		  driver.quit();
-	  }
+	@Test(priority=2)
+	public void loginWithValidDetailsTest() throws InterruptedException {
+			
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		objLoginSignupPage.clickOnLoginSignup();
+		
+		driver.manage().window().maximize();
+		objLoginSignupPage.setLoginUserName(user_Email);
+		objLoginSignupPage.setLoginPasswrod(user_Password);
+	 
+	   	objLoginSignupPage.clickOnLogin();
+		
+	   	//validation of login
+		
+		String welcomMsg=driver.findElement(By.xpath("/html/body/header/div/div/div/div[2]/div")).getText();
+		Assert.assertTrue(welcomMsg.contains("Welcome To Car rental portal"));
+		
+	}
+	
+	
+	
+@AfterTest
+	
+	public void AfterTest() { 
+		
+		WebDriverWait wait = new WebDriverWait(driver,30);
+
+		driver.quit();
+		
+	}
 	
 	
 }
