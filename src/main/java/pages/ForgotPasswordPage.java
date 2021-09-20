@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class ForgotPasswordPage {
 	
 	WebDriver driver = null;
-
+	
 	// Email field on forgot password page
 	By user_Email =  By.xpath("//*[@id=\"forgotpassword\"]/div/div/div[2]/div/div/div/form/div[1]/input");
 	// Contact Number field on forgot password page
@@ -63,7 +63,9 @@ public class ForgotPasswordPage {
 	
 	
 	//GUI
+	// forget password option on sign up page
 	public void forgetPassWord(){
+		//WebElement for forget password on sign up page
 		WebElement forgetpassword =driver.findElement(forgot_Password);
 		if(forgetpassword.isEnabled() &&forgetpassword.isDisplayed())
 		{
@@ -74,8 +76,10 @@ public class ForgotPasswordPage {
 		}
 		forgetpassword.click();
 	}
-
+	
+	//Email Id field on forget password
 	public void userEmailId(){
+		// WebElement for Email Id field on forget password
 		WebElement useremailID=driver.findElement (user_Email);
 		if(useremailID.isEnabled())
 		{
@@ -87,7 +91,9 @@ public class ForgotPasswordPage {
 		useremailID.click();
 	}
 
+	//Register mobile number field on forget password
 	public void regMobNo(){
+		//WebElement for Register mobile number field on forget password
 		WebElement regmobno =driver.findElement(user_Number);
 		if(regmobno.isEnabled() &&regmobno.isDisplayed())
 		{
@@ -99,7 +105,9 @@ public class ForgotPasswordPage {
 		regmobno.click();
 	}
 
+	//new password field on forget password
 	public void newPassword() {
+		//WebElement for new password field on forget password
 		WebElement newpass =driver.findElement(user_NewPassword);
 		if(newpass.isEnabled() &&newpass.isDisplayed())
 		{
@@ -110,7 +118,10 @@ public class ForgotPasswordPage {
 		}
 		newpass.click();
 	}
+	
+	//confirm password field on forget password
 	public void confPassword() {
+		//WebElement for confirm password field on forget password
 		WebElement confpassword =driver.findElement(user_ConfirmPassword);
 		if(confpassword.isEnabled() &&confpassword.isDisplayed())
 		{
@@ -122,7 +133,9 @@ public class ForgotPasswordPage {
 		confpassword.click();
 	}
 
+	//reset password field on forget password
 	public void resetPassWord(){
+		//WebElement for reset password field on forget password
 		WebElement resetpassword =driver.findElement(reset_Password);
 		if(resetpassword.isEnabled() &&resetpassword.isDisplayed())
 		{
@@ -133,7 +146,9 @@ public class ForgotPasswordPage {
 		resetpassword.click();
 	}
 
+	//back to login on home from forget password
 	public void backToLogin(){
+		//WebElement for back to login on home from forget password
 		WebElement backtoLog=driver.findElement(back_TO_Login);
 		if(backtoLog.isEnabled() &&backtoLog.isDisplayed())
 		{

@@ -19,14 +19,20 @@ import pages.LoginSignupPage;
 import utilities.ExcelUtils;
 import utilities.PropertyReader;
 
-public class SignUp {
-
+public class SignUp { 
+	
+	//local host url
 	String base_Url = PropertyReader.getProperty("home_URL");
 	String path = PropertyReader.getProperty("Chrome_Driver_Path");
+	// chrome path
 	WebDriver driver = null;
+	// user name
 	String user_Name = PropertyReader.getProperty("new_User_Name");
+	// email
 	String user_Email = PropertyReader.getProperty("new_User_Email");
+	//mobile number
 	String user_Number = PropertyReader.getProperty("new_User_Number");
+	//password
 	String user_Password = PropertyReader.getProperty("new_User_Password");
 
 	LoginSignupPage loginSignupPageObject= null;

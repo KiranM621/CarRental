@@ -28,7 +28,8 @@ public class ForgotPassword {
 		driver = new ChromeDriver();
 		js = (JavascriptExecutor) driver;
 	}
-	@Test
+	
+	@Test(priority=1,description="Testing forget password page")
 	public void forgetPass() throws InterruptedException {
 		driver.get(home_URL);//getURL
 		Thread.sleep(2000);
@@ -36,6 +37,7 @@ public class ForgotPassword {
 
 		ForgotPasswordPage forgotPasswordPageObject=new ForgotPasswordPage(driver);
 
+		//Referencing from ForgotPasswordPage
 		//click on login/signup btn
 		objLoginSignupPage.clickOnLoginSignup();
 

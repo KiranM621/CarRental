@@ -124,7 +124,9 @@ public class AdminPanelPage {
 	
 	//Admin panel heading test
 	public void adminPanel() {	
+		//Admin Heading
 		String adminHeading=driver.findElement(adminPageHeading).getText();
+		//Expected Heading
 		String expectedAdminHead="Car Rental Portal | Admin Panel";
 		if(adminHeading.equals(expectedAdminHead)) {
 			System.out.println("Admin page open successfully...");
@@ -135,9 +137,13 @@ public class AdminPanelPage {
 	
 	//Dropdown list in admin panel
 	public void dropDownAdmin() {
+		//WebElement for Dropdown option on admin page
 		WebElement dropdownList=driver.findElement(dropDownList);
 		dropdownList.click();
+		
+		//WebElement for Change pass on Admin page
 		WebElement changePass=driver.findElement(changePassword);
+		//WebElement for logout on Admin page
 		WebElement logOut=driver.findElement(logoutAdmin);
 		if(changePass.isDisplayed() && logOut.isDisplayed() && changePass.isEnabled() && logOut.isEnabled()) {
 			System.out.println("Change Password, logout option are visible and enabled in Dropdown List");
@@ -148,6 +154,7 @@ public class AdminPanelPage {
 	
 	//Dashboard on admin panel
 	public void dashboard() {
+		//WebElement for Dashboard option on admin page
 		WebElement dashboard=driver.findElement(adminDashboard);
 		if(dashboard.isDisplayed() && dashboard.isEnabled()) {
 			System.out.println("Dashboard option is visible and Enabled");
@@ -159,6 +166,7 @@ public class AdminPanelPage {
 	
 	//Update contcat us page in admin panel
 	public void updateContactInfo() {
+		//WebElement for Update contact info on Admin page
 		WebElement updateInfo=driver.findElement(updateContactInfo);
 		if(updateInfo.isDisplayed() && updateInfo.isEnabled()) {
 			System.out.println("Update Contact Info option is visible and Enabled");
@@ -166,10 +174,15 @@ public class AdminPanelPage {
 			System.out.println("Update Contact Info option is visible and Enabled");
 		}
 		updateInfo.click();
+		
+		//WebElement for address on Update contact info page
 		WebElement address=driver.findElement(updateAddress);
+		//WebElement for email on Update contact info page
 		WebElement email=driver.findElement(updateEmail);
+		//WebElement for contact num on Update contact info page
 		WebElement contactNum=driver.findElement(updateContactNum);
-		WebElement update=driver.findElement(submit);
+		//WebElement for update button on Update contact info page
+		WebElement update=driver.findElement(submit); 
 		
 		if(address.isDisplayed() && address.isEnabled() && email.isDisplayed() && email.isEnabled() && contactNum.isDisplayed() && contactNum.isEnabled() && update.isDisplayed() && update.isEnabled()) {
 			System.out.println("All TextFeilds and button in UpdateContact page are visible and Enabled");
@@ -181,6 +194,7 @@ public class AdminPanelPage {
 	
 	// Manage pages on admin panel
 	public void managePages() {
+		//WEbElement for manage pages on admin panel
 		WebElement managePages=driver.findElement(managePage);
 		if(managePages.isDisplayed() && managePages.isEnabled()) {
 			System.out.println("Manage Pages option is visible and Enabled");
@@ -192,6 +206,7 @@ public class AdminPanelPage {
 	
 	// Manage subscribers on admin panel
 	public void manageSubscribers() {
+		//WEbElement for manage subscribers on admin panel
 		WebElement manageSubscribers=driver.findElement(manageSubscriber);
 		if(manageSubscribers.isDisplayed() && manageSubscribers.isEnabled()) {
 			System.out.println("manageSubscribers option is visible and Enabled");
@@ -204,6 +219,7 @@ public class AdminPanelPage {
 	
 	// Register user in amdin panel
 	public void regUsers() {
+		//WEbElement for RegUser on admin panel
 		WebElement regUsers=driver.findElement(regUser);
 		if(regUsers.isDisplayed() && regUsers.isEnabled()) {
 			System.out.println("Reg Users option is visible and Enabled");
@@ -215,6 +231,7 @@ public class AdminPanelPage {
 	
 	//Manage query on admin panel
 	public void manageQuery() {
+		//WEbElement for manage Query on admin panel
 		WebElement manageQuery=driver.findElement(manageQueries);
 		if(manageQuery.isDisplayed() && manageQuery.isEnabled()) {
 			System.out.println("manage Contactus Query option is visible and Enabled");
@@ -226,6 +243,7 @@ public class AdminPanelPage {
 
 	//manage booking page on admin panel
 	public void manageBooking() {
+		//WEbElement for manage Booking on admin panel
 		WebElement manageBooking=driver.findElement(manageBookings);
 		if(manageBooking.isDisplayed() && manageBooking.isEnabled()) {
 			System.out.println("Manage Booking option is visible and Enabled");
@@ -237,8 +255,11 @@ public class AdminPanelPage {
 	 
 	// vehicle page in admin panel
 	public void vehicles() {
+		//WEbElement for vehicles on admin panel
 		WebElement vehicles=driver.findElement(vehicle);
+		//WEbElement for post vehivles on vehicle page
 		WebElement postVehicle=driver.findElement(postVehicles);
+		//WEbElement for manage vehivles on vehicle page
 		WebElement manageVehicle=driver.findElement(manageVehicles);
 		if(vehicles.isDisplayed() && vehicles.isEnabled()) {
 			System.out.println("Vehicles option is visible and Enabled");
@@ -246,6 +267,7 @@ public class AdminPanelPage {
 			System.out.println("Vehicles option is visible and Enabled");
 		}
 		vehicles.click();
+		
 		if(postVehicle.isDisplayed() && postVehicle.isEnabled() && manageVehicle.isDisplayed() && manageVehicle.isEnabled()) {
 			System.out.println("Post Vehicle, Manage Vehicle options are visible and Enabled");
 		}else {
@@ -255,8 +277,11 @@ public class AdminPanelPage {
 	
 	//brand page in admin panel
 	public void brands() {
+		//WEbElement for brands on admin panel
 		WebElement brands=driver.findElement(brand);
+		//WebElement for create brand on brand page
 		WebElement createBrand=driver.findElement(createBrands);
+		//WebElement for manage brand on brand page
 		WebElement manageBrand=driver.findElement(manageBrands);
 		if(brands.isDisplayed() && brands.isEnabled()) {
 			System.out.println("Brands option is visible and Enabled");
@@ -265,6 +290,7 @@ public class AdminPanelPage {
 		}
 		brands.click();
 		driver.manage().window().maximize();
+		
 		if(createBrand.isDisplayed() && createBrand.isEnabled() && manageBrand.isDisplayed() && manageBrand.isEnabled()) {
 			System.out.println("create brand, Manage brand options are visible and Enabled");
 		}else {

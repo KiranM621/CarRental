@@ -17,7 +17,7 @@ import pages.AdminPanelPage;
 import utilities.PropertyReader;
 
 public class AdminLogin {
-
+	
 	String base_Url = PropertyReader.getProperty("admin_URL");
 	String path = PropertyReader.getProperty("Chrome_Driver_Path");
 	String admin_Name = PropertyReader.getProperty("admin_Name");

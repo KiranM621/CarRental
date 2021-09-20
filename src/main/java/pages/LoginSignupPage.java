@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class LoginSignupPage {
 
 	WebDriver driver;
-	
+
 	// Login/Register Button
 	By login_Signup=By.xpath("//a[contains(@class,'btn btn-xs uppercase')]");
 	// Email_Id on login form
@@ -96,6 +96,7 @@ public class LoginSignupPage {
 		//GUI
 		//1]For User Login
 	public void loginRegistrationbtn() {
+		//WebElemnt for loginReg button on home page
 		WebElement loginRegbtn =driver.findElement(login_Signup);
 		if(loginRegbtn.isEnabled() &&loginRegbtn.isDisplayed())
 		{
@@ -105,8 +106,11 @@ public class LoginSignupPage {
 		}
 		loginRegbtn.click();
 			System.out.println("--LoginRegistration Button is Clicked--");
-		}
+	}
+	
+	//enter user name on login page
 	public void enterUserName(){
+		//WebElemnt for enter user name on login page
 		WebElement enterUserName =driver.findElement(user_Name);
 		if(enterUserName.isEnabled() &&enterUserName.isDisplayed())
 		{
@@ -117,7 +121,9 @@ public class LoginSignupPage {
 		enterUserName.click();
 	}
 	
+	//enter password on login page
 	public void enterPasswrod() {
+		//WebElemnt for enter password on login page
 		WebElement enterPasswrod =driver.findElement(password);
 		if(enterPasswrod.isEnabled() &&enterPasswrod.isDisplayed())
 		{
@@ -128,7 +134,9 @@ public class LoginSignupPage {
 		enterPasswrod.click();
 	}
 	
+	//login button on login page
 	public void login() {
+		//WebElemnt for login button on login page
 		WebElement login=driver.findElement(login_Button);
 		if(login.isEnabled() &&login.isDisplayed())
 		{
@@ -141,6 +149,7 @@ public class LoginSignupPage {
 	
 		//2]For SignUp
 	public void signUpForNew() {
+		//WebElemnt for sign for new on login page
 		WebElement signUpForNew =driver.findElement(sign_Up);
 		if(signUpForNew.isEnabled() &&signUpForNew.isDisplayed())
 		{
@@ -150,7 +159,10 @@ public class LoginSignupPage {
 		}
 		signUpForNew.click();
 	}
+	
+	//full name on signup page
 	public void fullname () {
+		//WebElement for full name on signup page
 		WebElement fullname =driver.findElement(sign_Up_Fullname);
 		if(fullname.isEnabled() &&fullname.isDisplayed())
 		{
@@ -161,7 +173,9 @@ public class LoginSignupPage {
 		fullname.click();
 	}
 	
+	//mobile number on signup page
 	public void mobileNumber() {
+		//WebElement for Mobile number on signup page
 		WebElement mobno =driver.findElement(sign_Up_Mob);
 		if(mobno.isEnabled() &&mobno.isDisplayed())
 		{
@@ -172,7 +186,9 @@ public class LoginSignupPage {
 		mobno.click();
 	}
 	
+	//Email on signup page
 	public void emailid() {
+		//WebElement for Email on signup page
 		WebElement emailid =driver.findElement(sign_Up_Email);
 		if(emailid.isEnabled() &&emailid.isDisplayed())
 		{
@@ -183,7 +199,9 @@ public class LoginSignupPage {
 		emailid.click();
 	}
 	
-		public void passWord() {
+	//password on signup page
+	public void passWord() {
+		//WebElement for password on signup page
 		WebElement password =driver.findElement(signup_Password);
 		if(password.isEnabled() &&password.isDisplayed())
 		{
@@ -194,7 +212,9 @@ public class LoginSignupPage {
 		password.click();
 	}
 		
+	//confirm password on signup page
 	public void confirmPassword() {
+		//WebElement for confirm password on signup page
 		WebElement confirmpass =driver.findElement(signup_Confirm_Password);
 		if(confirmpass.isEnabled() &&confirmpass.isDisplayed())
 		{
@@ -205,7 +225,9 @@ public class LoginSignupPage {
 		confirmpass.click();
 	}
 	
+	//signup button on sign up page
 	public void signup(){
+		//WebElement for signup button on sign up page
 		WebElement signup =driver.findElement(submit);
 		if(signup.isEnabled() &&signup.isDisplayed())
 		{

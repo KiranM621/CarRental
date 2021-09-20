@@ -16,7 +16,7 @@ import pages.LoginSignupPage;
 import utilities.PropertyReader;
 
 public class ForgotPassword {
-	
+	 
 	String base_Url = PropertyReader.getProperty("home_URL");
 	String path = PropertyReader.getProperty("Chrome_Driver_Path");
 	String user_Email = PropertyReader.getProperty("new_User_Email");

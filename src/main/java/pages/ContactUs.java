@@ -58,6 +58,7 @@ public class ContactUs {
 	
 	//Contact us option on home page and check heading of contact us page
 	public void pageContactUs() {
+		//WebElement for contact us option on home page
 		WebElement contactUs1=driver.findElement(contactus);
 		if(contactUs1.isEnabled() && contactUs1.isDisplayed()) {
 			System.out.println("ContactUs button is enabled and visible");
@@ -65,6 +66,8 @@ public class ContactUs {
 			System.out.println("ContactUs button is not enabled and visible");
 		}
 		contactUs1.click();
+		
+		//WebElement for heading in contact page
 		WebElement contactHeading1=driver.findElement(contactHeading);
 
 		if(contactHeading1.isDisplayed()) {
@@ -75,10 +78,15 @@ public class ContactUs {
 	
 	//Check all feilds of contact us page
 	public void contactUsPageFeilds() {
+		// WebElement for full name on contactus page
 		WebElement fullName=driver.findElement(contactus_Fullname);
+		// WebElement for Email on contactus page
 		WebElement emailAdd=driver.findElement(contactus_Email);
+		// WebElement for phone number on contactus page
 		WebElement phoneNum=driver.findElement(contactus_Mob);
+		// WebElement for message on contactus page
 		WebElement message=driver.findElement(contactus_Msg);
+		// WebElement for submit button on contactus page
 		WebElement submit=driver.findElement(contactus_send);
 
 

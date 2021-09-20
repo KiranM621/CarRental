@@ -29,7 +29,7 @@ public class AboutUsPages {
 		driver.findElement(aboutUs).click();
 	}
 	
-	
+
 	// Check the heading of About us page
 	public void pageAboutHeading() {
 		//WebElement of Heading in about us page

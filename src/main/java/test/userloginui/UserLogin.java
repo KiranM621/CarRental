@@ -29,12 +29,13 @@ public class UserLogin {
 			js = (JavascriptExecutor) driver;
 		}
 
-		@Test
+		@Test(priority=1,description="Testing user login on home page")
 		public void loginButton() throws InterruptedException {
 			driver.get(home_URL);//getURL
 			Thread.sleep(2000);
 			objLoginSignupPage =new LoginSignupPage(driver);
 
+			//Referencing from LoginSignupPage
 			//click on login/signup btn
 			objLoginSignupPage.loginRegistrationbtn();
 

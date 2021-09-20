@@ -26,13 +26,15 @@ public class SignUp {
 		driver = new ChromeDriver();
 		js = (JavascriptExecutor) driver;
 	}
-	@Test
+	
+	@Test(priority=1,description="Testing signup page")
 	public void signUp() throws InterruptedException {
 		driver.get(home_URL);//getURL
 		Thread.sleep(2000);
 		LoginSignupPage objLoginSignupPage= new LoginSignupPage(driver);
 		
 		//click on login/signup btn
+		//Referencing from LoginSignupPage
 		objLoginSignupPage.clickOnLoginSignup();
 		driver.manage().window().maximize();
 		Thread.sleep(2000);

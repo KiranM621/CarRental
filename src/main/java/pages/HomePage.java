@@ -13,7 +13,7 @@ import org.testng.Assert;
 public class HomePage {
 	
 	WebDriver driver;
-    
+   
 	//Home page car list btn
 	By car_List=By.xpath("//*[@id=\"navigation\"]/ul/li[3]/a");
 	//my profile btn
@@ -83,6 +83,7 @@ public class HomePage {
 		
 		//Check the Logo of Home Page
 		public void testPageLogo() {
+			//WebElement for logo on home page
 			WebElement logoTest=driver.findElement(logo);
 			Boolean imagePresent = (Boolean) ((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", logoTest);
 			if(!imagePresent) {
@@ -95,7 +96,9 @@ public class HomePage {
 		
 		//Check the Heading of Home Page
 		public void testPageHeading() {
+			//Expected Heading of home page
 			String expectedHeading="FIND THE RIGHT CAR FOR YOU.";
+			//Heading of home page
 			String heading=driver.findElement(homePageHeading).getText();
 			if(expectedHeading.contentEquals(heading)) {
 				System.out.println("Heading Matched");
@@ -115,6 +118,7 @@ public class HomePage {
 		//Check the color of Heading
 		public void testHeadingColor() {
 		      String errorColor = "#ffffff";
+		      //WebElement of heading on home page
 			  WebElement heading = driver.findElement(homePageHeading); 
 			  String fontColor = heading.getCssValue("color"); 
 			  String hexColorValue = Color.fromString(fontColor).asHex();
@@ -131,6 +135,7 @@ public class HomePage {
 		
 		//Check the DropDown option in Home Page
 		public void testDropdown()  {
+		    //WebElement of dropdown on home page
 			WebElement dropdown = driver.findElement(dropDown);
 			dropdown.click();
 			if(dropdown.isEnabled() && dropdown.isDisplayed()) 
@@ -144,12 +149,19 @@ public class HomePage {
 		
 		// test list in dropdown 
 		public void testDropdownList() {
+			//WebElement of profileSetting in dropdown on home page
 			WebElement profileSettings=driver.findElement(profileSettings1);
+			//WebElement of update password in dropdown on home page
 			WebElement updatePassword=driver.findElement(updatePassword1);
+			//WebElement of my booking in dropdown on home page
 			WebElement myBooking=driver.findElement(myBooking1);
+			//WebElement of post testimonial in dropdown on home page
 			WebElement postATestimonial=driver.findElement(postATestimonial1);
+			//WebElement of my testimonial in dropdown on home page
 			WebElement myTestimonial=driver.findElement(myTestimonial1);
+			//WebElement of signout in dropdown on home page
 			WebElement signOut=driver.findElement(signOut1);
+			
 			if(profileSettings.isEnabled() && profileSettings.isDisplayed() && updatePassword.isEnabled() && updatePassword.isDisplayed() && myBooking.isEnabled() && myBooking.isDisplayed() && postATestimonial.isEnabled() && postATestimonial.isDisplayed() && myTestimonial.isEnabled() && myTestimonial.isDisplayed() && signOut.isEnabled() && signOut.isDisplayed()) 
 			{
 				System.out.println("All List in Dropdown is enabled and visible");
@@ -161,6 +173,7 @@ public class HomePage {
 		
 		// Check the color changer option
 		public void testColorChanger() {
+			//WebElement for color changer on home page
 			WebElement colorChange=driver.findElement(colorChanger);
 			if(colorChange.isDisplayed() && colorChange.isEnabled()) {
 				System.out.println("Color changer is Visible And Enabled");
@@ -173,11 +186,17 @@ public class HomePage {
 		
 		//test colors in color changer
 		public void testColors() {
+			//WebElement for red color in color changer option
 			WebElement red=driver.findElement(redColor);
+			//WebElement for orange color in color changer option
 			WebElement orange=driver.findElement(orangeColor);
+			//WebElement for blue color in color changer option
 			WebElement blue=driver.findElement(blueColor);
+			//WebElement for pink color in color changer option
 			WebElement pink=driver.findElement(pinkColor);
+			//WebElement for green color in color changer option
 			WebElement green=driver.findElement(greenColor);
+			//WebElement for purple color in color changer option
 			WebElement purple=driver.findElement(purpleColor);
 			
 			if(red.isEnabled() && orange.isEnabled() && blue.isEnabled() && pink.isEnabled() && green.isEnabled() && purple.isEnabled()) {

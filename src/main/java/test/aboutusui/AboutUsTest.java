@@ -26,19 +26,22 @@ public class AboutUsTest {
 	}
 	
 	
-	@Test(priority=1)
+	@Test(priority=1,description="Testing aboutus option visible and enable on home page")
 	public void aboutUsTest() {
 		driver.get(localHostName);
 		// create object of page class
 		AboutUsPages obj= new AboutUsPages(driver);
+		//Referencing from AboutUsPages
+
 		obj.pageAboutUs();
 		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,description="Testing Heading of about us page")
 	public void aboutUsHeading() {
 		// create object of page class
 		AboutUsPages obj= new AboutUsPages(driver);
+		//Referencing from AboutUsPages
 		obj.pageAboutHeading();
 	}
 	
