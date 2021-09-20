@@ -12,10 +12,12 @@ import pages.HomePage;
 import utilities.PropertyReader;
 
 public class HomeColorChanger {
-	String localHostName = PropertyReader.getProperty("home_URL");
+	//localhost url
+	String localHostName = PropertyReader.getProperty("home_URL"); 
+	//chrome path
 	String path = PropertyReader.getProperty("Chrome_Driver_Path");
 	
-	WebDriver driver = null;
+	WebDriver driver = null; 
 	
 	@BeforeTest
 	public void beforeTest() {
@@ -24,17 +26,19 @@ public class HomeColorChanger {
 		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1,description="Testing color changer option on home page")
 	public void testHomePageColorChnager() {
 		driver.get(localHostName);
 		driver.manage().window().maximize();
 		HomePage obj=new HomePage(driver);
+		//Referencing from HomePage
 		obj.testColorChanger();
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,description="Testing all colors in color changer")
 	public void testColorsInChanger () {
 		HomePage obj=new HomePage(driver);
+		//Referencing from HomePage
 		obj.testColors();
 	}
 	
