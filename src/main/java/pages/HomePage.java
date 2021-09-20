@@ -16,11 +16,13 @@ public class HomePage {
     
 	//Home page car list btn
 	By car_List=By.xpath("//*[@id=\"navigation\"]/ul/li[3]/a");
-	
 	//my profile btn
 	By homePage_Profile=By.xpath("//*[@id=\"navigation_bar\"]/div/div[2]/div[1]/ul/li/a");
 	//my booking under my profile
 	By homePage_MyBooking=By.xpath("//*[@id=\"navigation_bar\"]/div/div[2]/div[1]/ul/li/ul/li[3]/a");
+	
+	//GUI
+	
 	//Home logo
 	By logo=By.xpath("//img[@src='assets/images/logg.png']");
 	//Home Heading
@@ -58,11 +60,10 @@ public class HomePage {
 	
 	
 	public HomePage (WebDriver driver) {
+		
 		this.driver = driver;
-		}
-	
-	
-	
+	}
+
 	
 	public void clickOnprofile() {
 		driver.findElement(homePage_Profile).click();

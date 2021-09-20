@@ -13,16 +13,18 @@ import pages.AdminPanelPage;
 import utilities.PropertyReader;
 
 public class LoginAdmin {
+	//Admin base url
 	String base_Url = PropertyReader.getProperty("admin_URL");
+	// chrome path
 	String path = PropertyReader.getProperty("Chrome_Driver_Path");
+	//admin username
 	String admin_Name = PropertyReader.getProperty("admin_Name");
+	//admin password
 	String admin_Password = PropertyReader.getProperty("admin_Password");
+	//localhost url
 	String localHostName = PropertyReader.getProperty("home_URL");
 
-	
 	WebDriver driver = null;
-	
-
 	
 	@BeforeTest
 	public void beforeTest() {
@@ -31,6 +33,7 @@ public class LoginAdmin {
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 	}
 	
+	
 	@Test(priority=1)
 	public void testAdmin() {
 		driver.get(localHostName);
@@ -38,6 +41,7 @@ public class LoginAdmin {
 		obj1.loginAdmin(admin_Name,admin_Password);
 		
 	}
+	
 	
 	@Test(priority=2)
 	public void testAdminPanel() {
@@ -52,11 +56,13 @@ public class LoginAdmin {
 		obj.dropDownAdmin();
 	}
 	
+	
 	@Test(priority=4)
 	public void adminDashboard() {
 		AdminPanelPage obj=new AdminPanelPage(driver);
 		obj.dashboard();
 	}
+	
 	
 	@Test(priority=5)
 	public void updateContact() {
@@ -64,22 +70,27 @@ public class LoginAdmin {
 		obj.updateContactInfo();
 	}
 
+	
 	@Test(priority=6)
 	public void adminManagePages() {
 		AdminPanelPage obj=new AdminPanelPage(driver);
 		obj.managePages();
 	}
 	
+	
 	@Test(priority=7)
 	public void adminManageSubscriber() {
 		AdminPanelPage obj=new AdminPanelPage(driver);
 		obj.manageSubscribers();
 	}
+	
+	
 	@Test(priority=8)
 	public void adminRegUser() {
 		AdminPanelPage obj=new AdminPanelPage(driver);
 		obj.regUsers();
 	}
+	
 	
 	@Test(priority=8)
 	public void adminManageQuery() {
@@ -87,28 +98,31 @@ public class LoginAdmin {
 		obj.manageQuery();
 	}
 	
+	
 	@Test(priority=9)
 	public void adminManageBooking() {
 		AdminPanelPage obj=new AdminPanelPage(driver);
 		obj.manageBooking();
 	}
 	
+	
 	@Test(priority=10)
 	public void adminVehicle() {
 		AdminPanelPage obj=new AdminPanelPage(driver);
 		obj.vehicles();
-
 	}
+	
+	
 	@Test(priority=11)
 	public void adminBrand() {
 		AdminPanelPage obj=new AdminPanelPage(driver);
 		obj.brands();
-	}	
+	}
+	
+	
 	@AfterTest	
 	public void afterTest() { 
-		
-		driver.quit();
-		
+		driver.quit();	
 	}
 
 }

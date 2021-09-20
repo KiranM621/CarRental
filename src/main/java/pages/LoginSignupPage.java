@@ -2,11 +2,12 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginSignupPage {
 
 	WebDriver driver;
-
+	
 	// Login/Register Button
 	By login_Signup=By.xpath("//a[contains(@class,'btn btn-xs uppercase')]");
 	// Email_Id on login form
@@ -78,13 +79,142 @@ public class LoginSignupPage {
 		}
 
 		public void setSignupUserEmail(String email) {
-		driver.findElement(sign_Up_Email).sendKeys(email);
+			driver.findElement(sign_Up_Email).sendKeys(email);
 		}
+		
 		public void clickOnForgotPassword() {
-		driver.findElement(forgot_Password).click();
+			driver.findElement(forgot_Password).click();
 		}
+		
 		public void clickOnSignup_Button() {
 		driver.findElement(submit).click();
 
 		 }
+		
+		
+		
+		//GUI
+		//1]For User Login
+	public void loginRegistrationbtn() {
+		WebElement loginRegbtn =driver.findElement(login_Signup);
+		if(loginRegbtn.isEnabled() &&loginRegbtn.isDisplayed())
+		{
+			System.out.println("--Login/Registration button is Enabled and Visible--");
+		}else{
+			System.out.println("--Login/Registration button is Not Enabled and Visible--");
+		}
+		loginRegbtn.click();
+			System.out.println("--LoginRegistration Button is Clicked--");
+		}
+	public void enterUserName(){
+		WebElement enterUserName =driver.findElement(user_Name);
+		if(enterUserName.isEnabled() &&enterUserName.isDisplayed())
+		{
+			System.out.println("1]EnterUserName button is Enabled and Visible");
+		}else{
+			System.out.println("2]EnterUserName button is Not Enabled and Visible");
+		}
+		enterUserName.click();
+	}
+	
+	public void enterPasswrod() {
+		WebElement enterPasswrod =driver.findElement(password);
+		if(enterPasswrod.isEnabled() &&enterPasswrod.isDisplayed())
+		{
+			System.out.println("2]EnterPasswrod button is Enabled and Visible");
+		}else{
+			System.out.println("2]EnterPasswrod button is Not Enabled and Visible");
+		}
+		enterPasswrod.click();
+	}
+	
+	public void login() {
+		WebElement login=driver.findElement(login_Button);
+		if(login.isEnabled() &&login.isDisplayed())
+		{
+			System.out.println("--Login Button is Enabled and Visible--");
+		}else{
+			System.out.println("--login button is Not Enabled and Visible--");
+		}
+		login.click();
+	}
+	
+		//2]For SignUp
+	public void signUpForNew() {
+		WebElement signUpForNew =driver.findElement(sign_Up);
+		if(signUpForNew.isEnabled() &&signUpForNew.isDisplayed())
+		{
+			System.out.println("--signUpForNew button is Enabled and Visible--");
+		}else{
+			System.out.println("--signUpForNew button is Not Enabled and Visible--");
+		}
+		signUpForNew.click();
+	}
+	public void fullname () {
+		WebElement fullname =driver.findElement(sign_Up_Fullname);
+		if(fullname.isEnabled() &&fullname.isDisplayed())
+		{
+			System.out.println("1]FullName Button is Enabled and Visible");
+		}else{
+			System.out.println("1]FullName Button is Not Enabled and Visible");
+		}
+		fullname.click();
+	}
+	
+	public void mobileNumber() {
+		WebElement mobno =driver.findElement(sign_Up_Mob);
+		if(mobno.isEnabled() &&mobno.isDisplayed())
+		{
+			System.out.println("2]MobileNo. Button is Enabled and Visible");
+		}else{
+			System.out.println("2]MobileNo. Button is Not Enabled and Visible");
+		}
+		mobno.click();
+	}
+	
+	public void emailid() {
+		WebElement emailid =driver.findElement(sign_Up_Email);
+		if(emailid.isEnabled() &&emailid.isDisplayed())
+		{
+			System.out.println("3]Email-ID Button is Enabled and Visible");
+		}else{
+			System.out.println("3]Email-ID Button is Not Enabled and Visible");
+		}
+		emailid.click();
+	}
+	
+		public void passWord() {
+		WebElement password =driver.findElement(signup_Password);
+		if(password.isEnabled() &&password.isDisplayed())
+		{
+			System.out.println("4]Password Button is Enabled and Visible");
+		}else{
+			System.out.println("4]Password Button is Not Enabled and Visible");
+		}
+		password.click();
+	}
+		
+	public void confirmPassword() {
+		WebElement confirmpass =driver.findElement(signup_Confirm_Password);
+		if(confirmpass.isEnabled() &&confirmpass.isDisplayed())
+		{
+			System.out.println("5]ConfirmPassword Button is Enabled and Visible");
+		}else{
+			System.out.println("5]ConfirmPassword Button is Not Enabled and Visible");
+		}
+		confirmpass.click();
+	}
+	
+	public void signup(){
+		WebElement signup =driver.findElement(submit);
+		if(signup.isEnabled() &&signup.isDisplayed())
+		{
+			System.out.println("--SignUp Button is Enabled and Visible--");
+		}else{
+			System.out.println("--SignUpButton is Not Enabled and Visible--");
+		}
+		signup.click();
+	}
+	
+
 }

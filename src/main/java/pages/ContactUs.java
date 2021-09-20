@@ -56,7 +56,7 @@ public class ContactUs {
 		driver.findElement(contactus_send).click();
 	}
 	
-
+	//Contact us option on home page and check heading of contact us page
 	public void pageContactUs() {
 		WebElement contactUs1=driver.findElement(contactus);
 		if(contactUs1.isEnabled() && contactUs1.isDisplayed()) {
@@ -73,6 +73,7 @@ public class ContactUs {
 		
 	}
 	
+	//Check all feilds of contact us page
 	public void contactUsPageFeilds() {
 		WebElement fullName=driver.findElement(contactus_Fullname);
 		WebElement emailAdd=driver.findElement(contactus_Email);

@@ -21,11 +21,12 @@ public class AdminPanelPage {
 	By account = By.linkText("Account");
 	// logout in accounts
 	By logout = By.linkText("Logout");
-	
 	//manage booking
 	By manage_Booking=By.xpath("/html/body/div[2]/nav/ul/li[5]/a");
 	// confirm from manage booking
 	By confirm=By.xpath("//*[@id=\"zctb\"]/tbody/tr[3]/td[9]/a[1]");
+	
+	//GUI
 	//admin page heading
 	By adminPageHeading=By.xpath("//a[@href='dashboard.php']");
 	// admin dropdown
@@ -121,8 +122,8 @@ public class AdminPanelPage {
 		driver.findElement(confirm).click();
 	}
 	
-	public void adminPanel() {
-		
+	//Admin panel heading test
+	public void adminPanel() {	
 		String adminHeading=driver.findElement(adminPageHeading).getText();
 		String expectedAdminHead="Car Rental Portal | Admin Panel";
 		if(adminHeading.equals(expectedAdminHead)) {
@@ -132,6 +133,7 @@ public class AdminPanelPage {
 		}
 	}
 	
+	//Dropdown list in admin panel
 	public void dropDownAdmin() {
 		WebElement dropdownList=driver.findElement(dropDownList);
 		dropdownList.click();
@@ -144,6 +146,7 @@ public class AdminPanelPage {
 		}
 	}
 	
+	//Dashboard on admin panel
 	public void dashboard() {
 		WebElement dashboard=driver.findElement(adminDashboard);
 		if(dashboard.isDisplayed() && dashboard.isEnabled()) {
@@ -154,6 +157,7 @@ public class AdminPanelPage {
 		dashboard.click();
 	}
 	
+	//Update contcat us page in admin panel
 	public void updateContactInfo() {
 		WebElement updateInfo=driver.findElement(updateContactInfo);
 		if(updateInfo.isDisplayed() && updateInfo.isEnabled()) {
@@ -175,6 +179,7 @@ public class AdminPanelPage {
 
 	}
 	
+	// Manage pages on admin panel
 	public void managePages() {
 		WebElement managePages=driver.findElement(managePage);
 		if(managePages.isDisplayed() && managePages.isEnabled()) {
@@ -185,6 +190,7 @@ public class AdminPanelPage {
 		managePages.click();
 	}
 	
+	// Manage subscribers on admin panel
 	public void manageSubscribers() {
 		WebElement manageSubscribers=driver.findElement(manageSubscriber);
 		if(manageSubscribers.isDisplayed() && manageSubscribers.isEnabled()) {
@@ -195,6 +201,8 @@ public class AdminPanelPage {
 		manageSubscribers.click();
 	}
 	
+	
+	// Register user in amdin panel
 	public void regUsers() {
 		WebElement regUsers=driver.findElement(regUser);
 		if(regUsers.isDisplayed() && regUsers.isEnabled()) {
@@ -205,6 +213,7 @@ public class AdminPanelPage {
 		regUsers.click();
 	}
 	
+	//Manage query on admin panel
 	public void manageQuery() {
 		WebElement manageQuery=driver.findElement(manageQueries);
 		if(manageQuery.isDisplayed() && manageQuery.isEnabled()) {
@@ -215,6 +224,7 @@ public class AdminPanelPage {
 		manageQuery.click();
 	}
 
+	//manage booking page on admin panel
 	public void manageBooking() {
 		WebElement manageBooking=driver.findElement(manageBookings);
 		if(manageBooking.isDisplayed() && manageBooking.isEnabled()) {
@@ -224,7 +234,8 @@ public class AdminPanelPage {
 		}
 		manageBooking.click();
 	}
-	
+	 
+	// vehicle page in admin panel
 	public void vehicles() {
 		WebElement vehicles=driver.findElement(vehicle);
 		WebElement postVehicle=driver.findElement(postVehicles);
@@ -242,6 +253,7 @@ public class AdminPanelPage {
 		}
 	}
 	
+	//brand page in admin panel
 	public void brands() {
 		WebElement brands=driver.findElement(brand);
 		WebElement createBrand=driver.findElement(createBrands);
