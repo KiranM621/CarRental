@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class AdminPanelPage {
 	
@@ -25,6 +26,49 @@ public class AdminPanelPage {
 	By manage_Booking=By.xpath("/html/body/div[2]/nav/ul/li[5]/a");
 	// confirm from manage booking
 	By confirm=By.xpath("//*[@id=\"zctb\"]/tbody/tr[3]/td[9]/a[1]");
+	//admin page heading
+	By adminPageHeading=By.xpath("//a[@href='dashboard.php']");
+	// admin dropdown
+	By dropDownList=By.xpath("//i[@class='fa fa-angle-down hidden-side']");
+	//change password in dropdown
+	By changePassword=By.xpath("//a[@href='change-password.php']");
+	// logout in dropdown
+	By logoutAdmin=By.xpath("//a[@href='logout.php']");
+	// admin  dashboard
+	By adminDashboard=By.xpath("//i[@class='fa fa-dashboard']");
+	// update contact info
+	By updateContactInfo=By.xpath("//a[@href='update-contactinfo.php']");
+	//update address in update contact info
+	By updateAddress=By.xpath("//textarea[@name='address']");
+	//update email in update contact info
+	By updateEmail=By.xpath("//input[@id='email']");
+	// update contcat num in update contact info
+	By updateContactNum=By.xpath("//input[@id='contactno']");
+	// submit button in update contact info
+	By submit=By.xpath("//button[@name='submit']");
+	// manage pages on admin 
+	By managePage=By.xpath("//a[@href='manage-pages.php']");
+	// manage subscribers on admin
+	By manageSubscriber=By.xpath("//a[@href='manage-subscribers.php']");
+	// register users in admin
+	By regUser=By.xpath("//a[@href='reg-users.php']");
+	// manage query in admin page
+	By manageQueries=By.xpath("//a[@href='manage-conactusquery.php']");
+	// manage booking in admin page
+	By manageBookings=By.xpath("//a[@href='manage-bookings.php']");
+	// vehicle in admin page
+	By vehicle=By.xpath("/html/body/div[2]/nav/ul/li[4]/a");
+	// post vehivle in vehicle option
+	By postVehicles=By.xpath("//a[@href='post-avehical.php']");
+	// create vehicle
+	By manageVehicles=By.xpath("//a[@href='manage-vehicles.php']");
+	// brands on admin page
+	By brand=By.xpath("/html/body/div[2]/nav/ul/li[3]/a");
+	// create brand in admin page
+	By createBrands=By.xpath("//a[@href='create-brand.php']");
+	//manage brands in admin page
+	By manageBrands=By.xpath("//a[@href='manage-brands.php']");
+		
 
 	
 	public AdminPanelPage(WebDriver driver) { 
@@ -75,6 +119,145 @@ public class AdminPanelPage {
 	
 	public void clickOnconfirm() {
 		driver.findElement(confirm).click();
+	}
+	
+	public void adminPanel() {
+		
+		String adminHeading=driver.findElement(adminPageHeading).getText();
+		String expectedAdminHead="Car Rental Portal | Admin Panel";
+		if(adminHeading.equals(expectedAdminHead)) {
+			System.out.println("Admin page open successfully...");
+		}else {
+			System.out.println("Failed");
+		}
+	}
+	
+	public void dropDownAdmin() {
+		WebElement dropdownList=driver.findElement(dropDownList);
+		dropdownList.click();
+		WebElement changePass=driver.findElement(changePassword);
+		WebElement logOut=driver.findElement(logoutAdmin);
+		if(changePass.isDisplayed() && logOut.isDisplayed() && changePass.isEnabled() && logOut.isEnabled()) {
+			System.out.println("Change Password, logout option are visible and enabled in Dropdown List");
+		}else {
+			System.out.println("Change Password, logout option are not visible and enabled in Dropdown List");
+		}
+	}
+	
+	public void dashboard() {
+		WebElement dashboard=driver.findElement(adminDashboard);
+		if(dashboard.isDisplayed() && dashboard.isEnabled()) {
+			System.out.println("Dashboard option is visible and Enabled");
+		}else {
+			System.out.println("Dashboard option is visible and Enabled");
+		}
+		dashboard.click();
+	}
+	
+	public void updateContactInfo() {
+		WebElement updateInfo=driver.findElement(updateContactInfo);
+		if(updateInfo.isDisplayed() && updateInfo.isEnabled()) {
+			System.out.println("Update Contact Info option is visible and Enabled");
+		}else {
+			System.out.println("Update Contact Info option is visible and Enabled");
+		}
+		updateInfo.click();
+		WebElement address=driver.findElement(updateAddress);
+		WebElement email=driver.findElement(updateEmail);
+		WebElement contactNum=driver.findElement(updateContactNum);
+		WebElement update=driver.findElement(submit);
+		
+		if(address.isDisplayed() && address.isEnabled() && email.isDisplayed() && email.isEnabled() && contactNum.isDisplayed() && contactNum.isEnabled() && update.isDisplayed() && update.isEnabled()) {
+			System.out.println("All TextFeilds and button in UpdateContact page are visible and Enabled");
+		}else {
+			System.out.println("All TextFeilds and button in UpdateContact page are not visible and Enabled");
+		}
+
+	}
+	
+	public void managePages() {
+		WebElement managePages=driver.findElement(managePage);
+		if(managePages.isDisplayed() && managePages.isEnabled()) {
+			System.out.println("Manage Pages option is visible and Enabled");
+		}else {
+			System.out.println("Manage Pages option is visible and Enabled");
+		}
+		managePages.click();
+	}
+	
+	public void manageSubscribers() {
+		WebElement manageSubscribers=driver.findElement(manageSubscriber);
+		if(manageSubscribers.isDisplayed() && manageSubscribers.isEnabled()) {
+			System.out.println("manageSubscribers option is visible and Enabled");
+		}else {
+			System.out.println("manageSubscribers option is visible and Enabled");
+		}
+		manageSubscribers.click();
+	}
+	
+	public void regUsers() {
+		WebElement regUsers=driver.findElement(regUser);
+		if(regUsers.isDisplayed() && regUsers.isEnabled()) {
+			System.out.println("Reg Users option is visible and Enabled");
+		}else {
+			System.out.println("Reg Users option is visible and Enabled");
+		}
+		regUsers.click();
+	}
+	
+	public void manageQuery() {
+		WebElement manageQuery=driver.findElement(manageQueries);
+		if(manageQuery.isDisplayed() && manageQuery.isEnabled()) {
+			System.out.println("manage Contactus Query option is visible and Enabled");
+		}else {
+			System.out.println("manage Contactus Query option is visible and Enabled");
+		}
+		manageQuery.click();
+	}
+
+	public void manageBooking() {
+		WebElement manageBooking=driver.findElement(manageBookings);
+		if(manageBooking.isDisplayed() && manageBooking.isEnabled()) {
+			System.out.println("Manage Booking option is visible and Enabled");
+		}else {
+			System.out.println("Manage Booking option is visible and Enabled");
+		}
+		manageBooking.click();
+	}
+	
+	public void vehicles() {
+		WebElement vehicles=driver.findElement(vehicle);
+		WebElement postVehicle=driver.findElement(postVehicles);
+		WebElement manageVehicle=driver.findElement(manageVehicles);
+		if(vehicles.isDisplayed() && vehicles.isEnabled()) {
+			System.out.println("Vehicles option is visible and Enabled");
+		}else {
+			System.out.println("Vehicles option is visible and Enabled");
+		}
+		vehicles.click();
+		if(postVehicle.isDisplayed() && postVehicle.isEnabled() && manageVehicle.isDisplayed() && manageVehicle.isEnabled()) {
+			System.out.println("Post Vehicle, Manage Vehicle options are visible and Enabled");
+		}else {
+			System.out.println("Post Vehicle, Manage Vehicle options are not visible and Enabled");
+		}
+	}
+	
+	public void brands() {
+		WebElement brands=driver.findElement(brand);
+		WebElement createBrand=driver.findElement(createBrands);
+		WebElement manageBrand=driver.findElement(manageBrands);
+		if(brands.isDisplayed() && brands.isEnabled()) {
+			System.out.println("Brands option is visible and Enabled");
+		}else {
+			System.out.println("Brands Booking option is visible and Enabled");
+		}
+		brands.click();
+		driver.manage().window().maximize();
+		if(createBrand.isDisplayed() && createBrand.isEnabled() && manageBrand.isDisplayed() && manageBrand.isEnabled()) {
+			System.out.println("create brand, Manage brand options are visible and Enabled");
+		}else {
+			System.out.println("create brand, Manage brand options are not visible and Enabled");
+		}
 	}
 	
 }
