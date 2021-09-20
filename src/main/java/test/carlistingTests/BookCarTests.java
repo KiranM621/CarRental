@@ -58,15 +58,17 @@ public class BookCarTests {
 		
 
 	}
-  @Test(priority=1)
+  @Test(priority=1,description="Test user can book car without login or not")
   public void bookwithoutloginTest() throws InterruptedException {
 		driver.manage().window().maximize();
 				
 		WebDriverWait wait = new WebDriverWait(driver,30);
+		//Referencing from CarListingPage
 		objCarListingPage.clickCarListingbtn();
 		
 		 js.executeScript("window.scrollBy(0,350)", "");//scroll down
 		 objCarListingPage.selectCarAndFuel();
+		 
 		 objCarListingPage.clickSearchCar();
 		 js.executeScript("window.scrollBy(0,350)", "");
 		 objCarListingPage.clickViewDetails();
@@ -83,20 +85,21 @@ public class BookCarTests {
   
   
   
-  @Test(priority=2)
+  @Test(priority=2,description="Required field test of Book car Field")
   public void bookCarRequireFieldTest() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 
-		
+		//Referencing from LoginSignUpPage
 		objLoginSignupPage.clickOnLoginSignup();
 		driver.manage().window().maximize();
 		objLoginSignupPage.setLoginUserName(user_Email);
 		objLoginSignupPage.setLoginPasswrod(user_Password);
-	   objLoginSignupPage.clickOnLogin();
-	   objCarListingPage.clickCarListingbtn();
+		objLoginSignupPage.clickOnLogin();
 		
-		 js.executeScript("window.scrollBy(0,350)", "");//scroll down
+		//Referencing from CarListingPage
+		objCarListingPage.clickCarListingbtn();
+		js.executeScript("window.scrollBy(0,350)", "");//scroll down
 		 
 		 objCarListingPage.selectCarAndFuel();
 		 objCarListingPage.clickSearchCar();
@@ -117,10 +120,11 @@ public class BookCarTests {
 			 
   }
   
-  @Test(priority=3)
+  @Test(priority=3,description="Book car successfully")
   public void bookCarTest() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		
+		//Referencing from CarListingPage
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		objCarListingPage.clickCarListingbtn();
 		js.executeScript("window.scrollBy(0,350)", "");//scroll down

@@ -28,7 +28,7 @@ public class SignUp {
 	String user_Email = PropertyReader.getProperty("new_User_Email");
 	String user_Number = PropertyReader.getProperty("new_User_Number");
 	String user_Password = PropertyReader.getProperty("new_User_Password");
-
+    String excel_Path=PropertyReader.getProperty("excel_Path");
 	LoginSignupPage loginSignupPageObject= null;
 	
 	@BeforeTest(description = "Creation of objects and settingup properties before test")
@@ -58,7 +58,7 @@ public class SignUp {
 	public Object[][] getData() { 
 		
 		//storing data retrieved from excel in 2d array
-		Object data[][] = testData("D:\\Java\\CarRentalProject\\src\\main\\resources\\data\\Data.xlsx","Signup");
+		Object data[][] = testData(excel_Path,"Signup");
 		return data;
 		
 	}

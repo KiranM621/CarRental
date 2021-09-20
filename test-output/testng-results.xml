@@ -1,33 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="20" passed="20" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-20T14:44:16 IST" name="Default suite" finished-at="2021-09-20T14:44:24 IST" duration-ms="7478">
+  <suite started-at="2021-09-20T17:56:18 IST" name="Test-Suite" finished-at="2021-09-20T17:57:52 IST" duration-ms="93759">
     <groups>
     </groups>
-    <test started-at="2021-09-20T14:44:16 IST" name="Default test" finished-at="2021-09-20T14:44:24 IST" duration-ms="7478">
-      <class name="test.adminfunctional.AdminLogin">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.adminfunctional.AdminLogin@25fb8912]" started-at="2021-09-20T14:44:16 IST" name="beforeTest" description="Creation of objects and settingup properties before test" finished-at="2021-09-20T14:44:19 IST" duration-ms="3135" status="PASS">
+    <test started-at="2021-09-20T17:56:18 IST" name="TestCarRental" finished-at="2021-09-20T17:57:52 IST" duration-ms="93759">
+      <class name="test.carlistingTests.BookCarTests">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.carlistingTests.BookCarTests@54a7079e]" started-at="2021-09-20T17:56:26 IST" name="beforeTest" finished-at="2021-09-20T17:56:29 IST" duration-ms="3631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="validLogin()[pri:1, instance:test.adminfunctional.AdminLogin@25fb8912]" started-at="2021-09-20T14:44:19 IST" name="validLogin" description="Testing admin login with valid data" finished-at="2021-09-20T14:44:22 IST" duration-ms="2907" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.carlistingTests.BookCarTests@54a7079e]" started-at="2021-09-20T17:57:31 IST" name="beforeMethod" finished-at="2021-09-20T17:57:32 IST" duration-ms="1161" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="bookwithoutloginTest()[pri:1, instance:test.carlistingTests.BookCarTests@54a7079e]" started-at="2021-09-20T17:57:32 IST" name="bookwithoutloginTest" description="Test user can book car without login or not" finished-at="2021-09-20T17:57:33 IST" duration-ms="1450" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookwithoutloginTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.carlistingTests.BookCarTests@54a7079e]" started-at="2021-09-20T17:57:33 IST" name="beforeMethod" finished-at="2021-09-20T17:57:33 IST" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="bookCarRequireFieldTest()[pri:2, instance:test.carlistingTests.BookCarTests@54a7079e]" started-at="2021-09-20T17:57:33 IST" name="bookCarRequireFieldTest" description="Required field test of Book car Field" finished-at="2021-09-20T17:57:35 IST" duration-ms="1604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookCarRequireFieldTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.carlistingTests.BookCarTests@54a7079e]" started-at="2021-09-20T17:57:35 IST" name="beforeMethod" finished-at="2021-09-20T17:57:35 IST" duration-ms="78" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="bookCarTest()[pri:3, instance:test.carlistingTests.BookCarTests@54a7079e]" started-at="2021-09-20T17:57:35 IST" name="bookCarTest" description="Book car successfully" finished-at="2021-09-20T17:57:36 IST" duration-ms="970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bookCarTest -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.carlistingTests.BookCarTests@54a7079e]" started-at="2021-09-20T17:57:44 IST" name="afterMethod" finished-at="2021-09-20T17:57:45 IST" duration-ms="1215" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- test.carlistingTests.BookCarTests -->
+      <class name="test.usersignup.ForgotPassword">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.usersignup.ForgotPassword@51e69659]" started-at="2021-09-20T17:56:37 IST" name="beforeTest" description="Creation of objects and settingup properties before test" finished-at="2021-09-20T17:56:40 IST" duration-ms="3656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.usersignup.ForgotPassword@51e69659]" started-at="2021-09-20T17:57:11 IST" name="beforeMethod" description="Loads basurl before every test" finished-at="2021-09-20T17:57:12 IST" duration-ms="1461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="retrievePasswordWithValidData()[pri:1, instance:test.usersignup.ForgotPassword@51e69659]" started-at="2021-09-20T17:57:12 IST" name="retrievePasswordWithValidData" description="Using valid user data" finished-at="2021-09-20T17:57:13 IST" duration-ms="1011" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrievePasswordWithValidData -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.usersignup.ForgotPassword@51e69659]" started-at="2021-09-20T17:57:13 IST" name="beforeMethod" description="Loads basurl before every test" finished-at="2021-09-20T17:57:14 IST" duration-ms="153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="retrievePasswordWithInvalidData()[pri:2, instance:test.usersignup.ForgotPassword@51e69659]" started-at="2021-09-20T17:57:14 IST" name="retrievePasswordWithInvalidData" description="Using Invalid user data,new password and confirmpassword don&#039;t match" finished-at="2021-09-20T17:57:15 IST" duration-ms="1066" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrievePasswordWithInvalidData -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.usersignup.ForgotPassword@51e69659]" started-at="2021-09-20T17:57:47 IST" name="afterTest" description="Closing browser" finished-at="2021-09-20T17:57:48 IST" duration-ms="920" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- test.usersignup.ForgotPassword -->
+      <class name="test.adminfunctional.AdminLogin">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.adminfunctional.AdminLogin@27462a88]" started-at="2021-09-20T17:56:18 IST" name="beforeTest" description="Creation of objects and settingup properties before test" finished-at="2021-09-20T17:56:22 IST" duration-ms="3905" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="validLogin()[pri:1, instance:test.adminfunctional.AdminLogin@27462a88]" started-at="2021-09-20T17:57:09 IST" name="validLogin" description="Testing admin login with valid data" finished-at="2021-09-20T17:57:10 IST" duration-ms="1622" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLogin -->
-        <test-method signature="adminLogout()[pri:2, instance:test.adminfunctional.AdminLogin@25fb8912]" started-at="2021-09-20T14:44:22 IST" name="adminLogout" description="Testing logout functionality from adminpanel" finished-at="2021-09-20T14:44:23 IST" duration-ms="191" status="PASS">
+        <test-method signature="adminLogout()[pri:2, instance:test.adminfunctional.AdminLogin@27462a88]" started-at="2021-09-20T17:57:10 IST" name="adminLogout" description="Testing logout functionality from adminpanel" finished-at="2021-09-20T17:57:11 IST" duration-ms="199" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminLogout -->
-        <test-method signature="invalidLogin()[pri:3, instance:test.adminfunctional.AdminLogin@25fb8912]" started-at="2021-09-20T14:44:23 IST" name="invalidLogin" description="Testing adminlogin with invalid data" finished-at="2021-09-20T14:44:23 IST" duration-ms="415" status="PASS">
+        <test-method signature="invalidLogin()[pri:3, instance:test.adminfunctional.AdminLogin@27462a88]" started-at="2021-09-20T17:57:11 IST" name="invalidLogin" description="Testing adminlogin with invalid data" finished-at="2021-09-20T17:57:11 IST" duration-ms="357" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLogin -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.adminfunctional.AdminLogin@25fb8912]" started-at="2021-09-20T14:44:23 IST" name="afterTest" finished-at="2021-09-20T14:44:24 IST" duration-ms="779" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.adminfunctional.AdminLogin@27462a88]" started-at="2021-09-20T17:57:42 IST" name="afterTest" description="Closing browser" finished-at="2021-09-20T17:57:43 IST" duration-ms="980" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- test.adminfunctional.AdminLogin -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="test.ContactUsTest.ContactUsTest">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.ContactUsTest.ContactUsTest@201a4587]" started-at="2021-09-20T17:56:29 IST" name="beforeTest" finished-at="2021-09-20T17:56:33 IST" duration-ms="3620" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="contactusTest()[pri:0, instance:test.ContactUsTest.ContactUsTest@201a4587]" started-at="2021-09-20T17:57:19 IST" name="contactusTest" description="Test successful contact us" finished-at="2021-09-20T17:57:21 IST" duration-ms="2187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- contactusTest -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.ContactUsTest.ContactUsTest@201a4587]" started-at="2021-09-20T17:57:45 IST" name="afterTest" finished-at="2021-09-20T17:57:46 IST" duration-ms="1282" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- test.ContactUsTest.ContactUsTest -->
+      <class name="test.adminfunctional.AdminPassword">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.adminfunctional.AdminPassword@47e2e487]" started-at="2021-09-20T17:56:22 IST" name="beforeTest" description="Creation of objects and settingup properties before test" finished-at="2021-09-20T17:56:26 IST" duration-ms="3499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.adminfunctional.AdminPassword@47e2e487]" started-at="2021-09-20T17:57:15 IST" name="beforeMethod" description="Loads basurl before every test" finished-at="2021-09-20T17:57:16 IST" duration-ms="1049" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="changePasswordWithValidDetails()[pri:1, instance:test.adminfunctional.AdminPassword@47e2e487]" started-at="2021-09-20T17:57:16 IST" name="changePasswordWithValidDetails" description="Changing password with valid details" finished-at="2021-09-20T17:57:17 IST" duration-ms="1250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changePasswordWithValidDetails -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.adminfunctional.AdminPassword@47e2e487]" started-at="2021-09-20T17:57:17 IST" name="beforeMethod" description="Loads basurl before every test" finished-at="2021-09-20T17:57:17 IST" duration-ms="110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="changePasswordWithInvalidDetails()[pri:2, instance:test.adminfunctional.AdminPassword@47e2e487]" started-at="2021-09-20T17:57:17 IST" name="changePasswordWithInvalidDetails" description="Changing password : new password and confirm password don&#039;t match" finished-at="2021-09-20T17:57:18 IST" duration-ms="963" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changePasswordWithInvalidDetails -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.adminfunctional.AdminPassword@47e2e487]" started-at="2021-09-20T17:57:18 IST" name="beforeMethod" description="Loads basurl before every test" finished-at="2021-09-20T17:57:18 IST" duration-ms="135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="changePasswordWithInavlidCurrentPassword()[pri:3, instance:test.adminfunctional.AdminPassword@47e2e487]" started-at="2021-09-20T17:57:18 IST" name="changePasswordWithInavlidCurrentPassword" description="Changing password : with wrong current password" finished-at="2021-09-20T17:57:19 IST" duration-ms="1080" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changePasswordWithInavlidCurrentPassword -->
+        <test-method is-config="true" signature="AfterTest()[pri:0, instance:test.adminfunctional.AdminPassword@47e2e487]" started-at="2021-09-20T17:57:43 IST" name="AfterTest" finished-at="2021-09-20T17:57:44 IST" duration-ms="1105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+      </class> <!-- test.adminfunctional.AdminPassword -->
+      <class name="test.carlistingTests.FetchCarTest">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.carlistingTests.FetchCarTest@4310d43]" started-at="2021-09-20T17:56:33 IST" name="beforeTest" finished-at="2021-09-20T17:56:37 IST" duration-ms="3703" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="fetchCarTest()[pri:0, instance:test.carlistingTests.FetchCarTest@4310d43]" started-at="2021-09-20T17:57:24 IST" name="fetchCarTest" description="while selection car and fuel Test whether it fetches correct car" finished-at="2021-09-20T17:57:31 IST" duration-ms="7162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fetchCarTest -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.carlistingTests.FetchCarTest@4310d43]" started-at="2021-09-20T17:57:46 IST" name="afterTest" finished-at="2021-09-20T17:57:47 IST" duration-ms="1114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- test.carlistingTests.FetchCarTest -->
+      <class name="test.userlogin.UserLogin">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.userlogin.UserLogin@36916eb0]" started-at="2021-09-20T17:56:52 IST" name="beforeTest" finished-at="2021-09-20T17:56:56 IST" duration-ms="3677" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.userlogin.UserLogin@36916eb0]" started-at="2021-09-20T17:56:56 IST" name="beforeMethod" finished-at="2021-09-20T17:56:57 IST" duration-ms="1491" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginWithInValidDetailsTest()[pri:1, instance:test.userlogin.UserLogin@36916eb0]" started-at="2021-09-20T17:56:57 IST" name="loginWithInValidDetailsTest" description="Login Test for Invalid credentials" finished-at="2021-09-20T17:57:03 IST" duration-ms="5577" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInValidDetailsTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.userlogin.UserLogin@36916eb0]" started-at="2021-09-20T17:57:03 IST" name="beforeMethod" finished-at="2021-09-20T17:57:04 IST" duration-ms="78" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginWithValidDetailsTest(java.lang.String,java.lang.String)[pri:2, instance:test.userlogin.UserLogin@36916eb0]" started-at="2021-09-20T17:57:04 IST" name="loginWithValidDetailsTest" description="Login Test for valid credentials" data-provider="testData" finished-at="2021-09-20T17:57:04 IST" duration-ms="563" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidDetailsTest -->
+        <test-method is-config="true" signature="AfterTest()[pri:0, instance:test.userlogin.UserLogin@36916eb0]" started-at="2021-09-20T17:57:51 IST" name="AfterTest" finished-at="2021-09-20T17:57:52 IST" duration-ms="744" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+      </class> <!-- test.userlogin.UserLogin -->
+      <class name="test.homepageTests.HomePageMyBooking">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.homepageTests.HomePageMyBooking@61001b64]" started-at="2021-09-20T17:56:40 IST" name="beforeTest" finished-at="2021-09-20T17:56:44 IST" duration-ms="4117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="homePageMyBookingTest()[pri:0, instance:test.homepageTests.HomePageMyBooking@61001b64]" started-at="2021-09-20T17:57:21 IST" name="homePageMyBookingTest" description="Test my booking button redirect to correct page" finished-at="2021-09-20T17:57:24 IST" duration-ms="2140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homePageMyBookingTest -->
+        <test-method is-config="true" signature="afteTest()[pri:0, instance:test.homepageTests.HomePageMyBooking@61001b64]" started-at="2021-09-20T17:57:48 IST" name="afteTest" finished-at="2021-09-20T17:57:49 IST" duration-ms="1035" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afteTest -->
+      </class> <!-- test.homepageTests.HomePageMyBooking -->
+      <class name="test.adminfunctional.ManageBooking">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.adminfunctional.ManageBooking@26e356f0]" started-at="2021-09-20T17:56:44 IST" name="beforeTest" finished-at="2021-09-20T17:56:48 IST" duration-ms="3531" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="manageBooking()[pri:0, instance:test.adminfunctional.ManageBooking@26e356f0]" started-at="2021-09-20T17:57:36 IST" name="manageBooking" description="Admin confirm booked car ,Test status reflect to Home page or not" finished-at="2021-09-20T17:57:42 IST" duration-ms="5508" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- manageBooking -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.adminfunctional.ManageBooking@26e356f0]" started-at="2021-09-20T17:57:49 IST" name="afterTest" finished-at="2021-09-20T17:57:50 IST" duration-ms="1018" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- test.adminfunctional.ManageBooking -->
+      <class name="test.usersignup.SignUp">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.usersignup.SignUp@71a8adcf]" started-at="2021-09-20T17:56:48 IST" name="beforeTest" description="Creation of objects and settingup properties before test" finished-at="2021-09-20T17:56:52 IST" duration-ms="3903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.usersignup.SignUp@71a8adcf]" started-at="2021-09-20T17:57:04 IST" name="beforeMethod" description="Loads basurl before every test" finished-at="2021-09-20T17:57:05 IST" duration-ms="1092" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="signupTestValid(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:test.usersignup.SignUp@71a8adcf]" started-at="2021-09-20T17:57:05 IST" name="signupTestValid" description="Verifying valid signup using data-driven test" data-provider="testData" finished-at="2021-09-20T17:57:07 IST" duration-ms="1280" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[jelley]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1225981000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[jelly123@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[jelly123]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[jelly123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signupTestValid -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.usersignup.SignUp@71a8adcf]" started-at="2021-09-20T17:57:07 IST" name="beforeMethod" description="Loads basurl before every test" finished-at="2021-09-20T17:57:07 IST" duration-ms="139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="signupTestValid(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:test.usersignup.SignUp@71a8adcf]" started-at="2021-09-20T17:57:07 IST" name="signupTestValid" description="Verifying valid signup using data-driven test" data-provider="testData" finished-at="2021-09-20T17:57:08 IST" duration-ms="940" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[emma]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1227981000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[emma123@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[emma123]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[emma123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signupTestValid -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.usersignup.SignUp@71a8adcf]" started-at="2021-09-20T17:57:08 IST" name="beforeMethod" description="Loads basurl before every test" finished-at="2021-09-20T17:57:08 IST" duration-ms="115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="signupTestInvalid()[pri:2, instance:test.usersignup.SignUp@71a8adcf]" started-at="2021-09-20T17:57:08 IST" name="signupTestInvalid" description="Verifying invalid signup" finished-at="2021-09-20T17:57:09 IST" duration-ms="965" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signupTestInvalid -->
+        <test-method is-config="true" signature="AfterTest()[pri:0, instance:test.usersignup.SignUp@71a8adcf]" started-at="2021-09-20T17:57:50 IST" name="AfterTest" description="Closing browser" finished-at="2021-09-20T17:57:51 IST" duration-ms="1056" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+      </class> <!-- test.usersignup.SignUp -->
+    </test> <!-- TestCarRental -->
+  </suite> <!-- Test-Suite -->
 </testng-results>

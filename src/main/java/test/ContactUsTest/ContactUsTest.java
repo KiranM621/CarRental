@@ -39,8 +39,9 @@ public class ContactUsTest {
 				driver = new ChromeDriver();
 				 js = (JavascriptExecutor) driver;
 				 
-		  }	
-  @Test
+		  }
+
+  @Test(description="Test successful contact us")
   public void contactusTest() throws InterruptedException {
 		
 	  	driver.get(home_URL);//getURL
@@ -48,6 +49,8 @@ public class ContactUsTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		objContactUs =new ContactUs(driver);
+		
+		//Referencing from ContactUsPage
 		objContactUs.clickContactus();
   
         objContactUs.contactusEnterfullname(contactus_Fullname);
