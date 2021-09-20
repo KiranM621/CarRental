@@ -57,41 +57,51 @@ public class ContactUs {
 	}
 	
 
-	public void pageContactUs() {
-		WebElement contactUs1=driver.findElement(contactus);
-		if(contactUs1.isEnabled() && contactUs1.isDisplayed()) {
-			System.out.println("ContactUs button is enabled and visible");
-		}else {
-			System.out.println("ContactUs button is not enabled and visible");
-		}
-		contactUs1.click();
-		WebElement contactHeading1=driver.findElement(contactHeading);
+	//Contact us option on home page and check heading of contact us page
+		public void pageContactUs() {
+			//WebElement for contact us option on home page
+			WebElement contactUs1=driver.findElement(contactus);
+			if(contactUs1.isEnabled() && contactUs1.isDisplayed()) {
+				System.out.println("ContactUs button is enabled and visible");
+			}else {
+				System.out.println("ContactUs button is not enabled and visible");
+			}
+			contactUs1.click();
+			
+			//WebElement for heading in contact page
+			WebElement contactHeading1=driver.findElement(contactHeading);
 
-		if(contactHeading1.isDisplayed()) {
-			System.out.println("Heading is Display properly in Contact Us Page");
+			if(contactHeading1.isDisplayed()) {
+				System.out.println("Heading is Display properly in Contact Us Page");
+			}
+			
 		}
 		
-	}
-	
-	public void contactUsPageFeilds() {
-		WebElement fullName=driver.findElement(contactus_Fullname);
-		WebElement emailAdd=driver.findElement(contactus_Email);
-		WebElement phoneNum=driver.findElement(contactus_Mob);
-		WebElement message=driver.findElement(contactus_Msg);
-		WebElement submit=driver.findElement(contactus_send);
+		//Check all feilds of contact us page
+		public void contactUsPageFeilds() {
+			// WebElement for full name on contactus page
+			WebElement fullName=driver.findElement(contactus_Fullname);
+			// WebElement for Email on contactus page
+			WebElement emailAdd=driver.findElement(contactus_Email);
+			// WebElement for phone number on contactus page
+			WebElement phoneNum=driver.findElement(contactus_Mob);
+			// WebElement for message on contactus page
+			WebElement message=driver.findElement(contactus_Msg);
+			// WebElement for submit button on contactus page
+			WebElement submit=driver.findElement(contactus_send);
 
 
-		if(fullName.isDisplayed() && emailAdd.isDisplayed() && phoneNum.isDisplayed() && message.isDisplayed() && submit.isDisplayed()) {
-			System.out.println("All TextBox and Button Are Visible");
-		}else {
-			System.out.println("TextBox Are not Visible");
+			if(fullName.isDisplayed() && emailAdd.isDisplayed() && phoneNum.isDisplayed() && message.isDisplayed() && submit.isDisplayed()) {
+				System.out.println("All TextBox and Button Are Visible");
+			}else {
+				System.out.println("TextBox Are not Visible");
+			}
+		
+			if(fullName.isEnabled() && emailAdd.isEnabled() && phoneNum.isEnabled() && message.isEnabled() && submit.isEnabled()) {
+				System.out.println("All TextBox and Button Are Enabled");
+			}else {
+				System.out.println("TextBox Are not isEnabled");
+			}
 		}
-	
-		if(fullName.isEnabled() && emailAdd.isEnabled() && phoneNum.isEnabled() && message.isEnabled() && submit.isEnabled()) {
-			System.out.println("All TextBox and Button Are Enabled");
-		}else {
-			System.out.println("TextBox Are not isEnabled");
-		}
-	}
-	
+		
 }

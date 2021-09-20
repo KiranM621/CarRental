@@ -12,28 +12,36 @@ import utilities.PropertyReader;
 
 public class AboutUsTest {
 	
+	//Localhost path
 	String localHostName = PropertyReader.getProperty("home_URL");
+	//chrome driver path
 	String path = PropertyReader.getProperty("Chrome_Driver_Path");
-	
 	WebDriver driver = null;
-	
+
 	@BeforeTest
 	public void beforeTest() {
 		System.setProperty("webdriver.chrome.driver",path);
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 	}
-	@Test(priority=1)
+	
+	
+	@Test(priority=1,description="Testing aboutus option visible and enable on home page")
 	public void aboutUsTest() {
 		driver.get(localHostName);
+		// create object of page class
 		AboutUsPages obj= new AboutUsPages(driver);
+		//Referencing from AboutUsPages
+
 		obj.pageAboutUs();
 		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,description="Testing Heading of about us page")
 	public void aboutUsHeading() {
+		// create object of page class
 		AboutUsPages obj= new AboutUsPages(driver);
+		//Referencing from AboutUsPages
 		obj.pageAboutHeading();
 	}
 	

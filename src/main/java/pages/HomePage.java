@@ -74,117 +74,136 @@ public class HomePage {
 	}
 	
 	//Check the Title of Home Page
-		public void testPageTitle() {
-			String title=driver.getTitle();
-			String expectedTitle="Car Rental Portal";
-			Assert.assertEquals(title,expectedTitle); 	
-		}
-		
-		//Check the Logo of Home Page
-		public void testPageLogo() {
-			WebElement logoTest=driver.findElement(logo);
-			Boolean imagePresent = (Boolean) ((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", logoTest);
-			if(!imagePresent) {
-				System.out.println("Logo is not Visible");	
-			}else {
-				System.out.println("Logo is Visible");
+			public void testPageTitle() {
+				String title=driver.getTitle();
+				String expectedTitle="Car Rental Portal";
+				Assert.assertEquals(title,expectedTitle); 	
 			}
 			
-		}
-		
-		//Check the Heading of Home Page
-		public void testPageHeading() {
-			String expectedHeading="FIND THE RIGHT CAR FOR YOU.";
-			String heading=driver.findElement(homePageHeading).getText();
-			if(expectedHeading.contentEquals(heading)) {
-				System.out.println("Heading Matched");
-			}else {
-				System.out.println("Heading not Matched");
+			//Check the Logo of Home Page
+			public void testPageLogo() {
+				//WebElement for logo on home page
+				WebElement logoTest=driver.findElement(logo);
+				Boolean imagePresent = (Boolean) ((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", logoTest);
+				if(!imagePresent) {
+					System.out.println("Logo is not Visible");	
+				}else {
+					System.out.println("Logo is Visible");
+				}
+				
 			}
-		}
-		
-		//Check  the Search box on Home Page
-		public void testSearchBox() {
-			boolean eleDisplay=driver.findElement(searchBox).isDisplayed();
-			System.out.println("SearchBox Visible is "+eleDisplay);
-			boolean eleEnable=driver.findElement(searchBox).isEnabled();
-			System.out.println("SearchBox enable is "+eleEnable);
-		}
-		
-		//Check the color of Heading
-		public void testHeadingColor() {
-		      String errorColor = "#ffffff";
-			  WebElement heading = driver.findElement(homePageHeading); 
-			  String fontColor = heading.getCssValue("color"); 
-			  String hexColorValue = Color.fromString(fontColor).asHex();
-		      Assert.assertEquals(hexColorValue, errorColor);	      
-
-		}
-		
-		//Check the Scroll bar 
-		public void scrollBar() {
-	        JavascriptExecutor js = (JavascriptExecutor) driver;
-	        js.executeScript("window.scrollBy(0,1000)");
-
-		}
-		
-		//Check the DropDown option in Home Page
-		public void testDropdown()  {
-			WebElement dropdown = driver.findElement(dropDown);
-			dropdown.click();
-			if(dropdown.isEnabled() && dropdown.isDisplayed()) 
-			   { 
-			      System.out.println("Dropdown button is enabled and visible"); 
-			   } 
-			  else { 
-			      System.out.println("Dropdown button is not visible"); 
-			  } 
-		}
-		
-		// test list in dropdown 
-		public void testDropdownList() {
-			WebElement profileSettings=driver.findElement(profileSettings1);
-			WebElement updatePassword=driver.findElement(updatePassword1);
-			WebElement myBooking=driver.findElement(myBooking1);
-			WebElement postATestimonial=driver.findElement(postATestimonial1);
-			WebElement myTestimonial=driver.findElement(myTestimonial1);
-			WebElement signOut=driver.findElement(signOut1);
-			if(profileSettings.isEnabled() && profileSettings.isDisplayed() && updatePassword.isEnabled() && updatePassword.isDisplayed() && myBooking.isEnabled() && myBooking.isDisplayed() && postATestimonial.isEnabled() && postATestimonial.isDisplayed() && myTestimonial.isEnabled() && myTestimonial.isDisplayed() && signOut.isEnabled() && signOut.isDisplayed()) 
-			{
-				System.out.println("All List in Dropdown is enabled and visible");
-			}
-			else { 
-			      System.out.println("All List in Dropdown is not visible"); 
-			}
-		}
-		
-		// Check the color changer option
-		public void testColorChanger() {
-			WebElement colorChange=driver.findElement(colorChanger);
-			if(colorChange.isDisplayed() && colorChange.isEnabled()) {
-				System.out.println("Color changer is Visible And Enabled");
-			}else {
-				System.out.println("Color changer is not Visible And Enabled");
-			}
-			colorChange.click();
-			driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-		}
-		
-		//test colors in color changer
-		public void testColors() {
-			WebElement red=driver.findElement(redColor);
-			WebElement orange=driver.findElement(orangeColor);
-			WebElement blue=driver.findElement(blueColor);
-			WebElement pink=driver.findElement(pinkColor);
-			WebElement green=driver.findElement(greenColor);
-			WebElement purple=driver.findElement(purpleColor);
 			
-			if(red.isEnabled() && orange.isEnabled() && blue.isEnabled() && pink.isEnabled() && green.isEnabled() && purple.isEnabled()) {
-				System.out.println("All color buttons are Enabled");
-			}else {
-				System.out.println("Not Enabled");
+			//Check the Heading of Home Page
+			public void testPageHeading() {
+				//Expected Heading of home page
+				String expectedHeading="FIND THE RIGHT CAR FOR YOU.";
+				//Heading of home page
+				String heading=driver.findElement(homePageHeading).getText();
+				if(expectedHeading.contentEquals(heading)) {
+					System.out.println("Heading Matched");
+				}else {
+					System.out.println("Heading not Matched");
+				}
 			}
-		}
-	
+			
+			//Check  the Search box on Home Page
+			public void testSearchBox() {
+				boolean eleDisplay=driver.findElement(searchBox).isDisplayed();
+				System.out.println("SearchBox Visible is "+eleDisplay);
+				boolean eleEnable=driver.findElement(searchBox).isEnabled();
+				System.out.println("SearchBox enable is "+eleEnable);
+			}
+			
+			//Check the color of Heading
+			public void testHeadingColor() {
+			      String errorColor = "#ffffff";
+			      //WebElement of heading on home page
+				  WebElement heading = driver.findElement(homePageHeading); 
+				  String fontColor = heading.getCssValue("color"); 
+				  String hexColorValue = Color.fromString(fontColor).asHex();
+			      Assert.assertEquals(hexColorValue, errorColor);	      
+
+			}
+			
+			//Check the Scroll bar 
+			public void scrollBar() {
+		        JavascriptExecutor js = (JavascriptExecutor) driver;
+		        js.executeScript("window.scrollBy(0,1000)");
+
+			}
+			
+			//Check the DropDown option in Home Page
+			public void testDropdown()  {
+			    //WebElement of dropdown on home page
+				WebElement dropdown = driver.findElement(dropDown);
+				dropdown.click();
+				if(dropdown.isEnabled() && dropdown.isDisplayed()) 
+				   { 
+				      System.out.println("Dropdown button is enabled and visible"); 
+				   } 
+				  else { 
+				      System.out.println("Dropdown button is not visible"); 
+				  } 
+			}
+			
+			// test list in dropdown 
+			public void testDropdownList() {
+				//WebElement of profileSetting in dropdown on home page
+				WebElement profileSettings=driver.findElement(profileSettings1);
+				//WebElement of update password in dropdown on home page
+				WebElement updatePassword=driver.findElement(updatePassword1);
+				//WebElement of my booking in dropdown on home page
+				WebElement myBooking=driver.findElement(myBooking1);
+				//WebElement of post testimonial in dropdown on home page
+				WebElement postATestimonial=driver.findElement(postATestimonial1);
+				//WebElement of my testimonial in dropdown on home page
+				WebElement myTestimonial=driver.findElement(myTestimonial1);
+				//WebElement of signout in dropdown on home page
+				WebElement signOut=driver.findElement(signOut1);
+				
+				if(profileSettings.isEnabled() && profileSettings.isDisplayed() && updatePassword.isEnabled() && updatePassword.isDisplayed() && myBooking.isEnabled() && myBooking.isDisplayed() && postATestimonial.isEnabled() && postATestimonial.isDisplayed() && myTestimonial.isEnabled() && myTestimonial.isDisplayed() && signOut.isEnabled() && signOut.isDisplayed()) 
+				{
+					System.out.println("All List in Dropdown is enabled and visible");
+				}
+				else { 
+				      System.out.println("All List in Dropdown is not visible"); 
+				}
+			}
+			
+			// Check the color changer option
+			public void testColorChanger() {
+				//WebElement for color changer on home page
+				WebElement colorChange=driver.findElement(colorChanger);
+				if(colorChange.isDisplayed() && colorChange.isEnabled()) {
+					System.out.println("Color changer is Visible And Enabled");
+				}else {
+					System.out.println("Color changer is not Visible And Enabled");
+				}
+				colorChange.click();
+				driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+			}
+			
+			//test colors in color changer
+			public void testColors() {
+				//WebElement for red color in color changer option
+				WebElement red=driver.findElement(redColor);
+				//WebElement for orange color in color changer option
+				WebElement orange=driver.findElement(orangeColor);
+				//WebElement for blue color in color changer option
+				WebElement blue=driver.findElement(blueColor);
+				//WebElement for pink color in color changer option
+				WebElement pink=driver.findElement(pinkColor);
+				//WebElement for green color in color changer option
+				WebElement green=driver.findElement(greenColor);
+				//WebElement for purple color in color changer option
+				WebElement purple=driver.findElement(purpleColor);
+				
+				if(red.isEnabled() && orange.isEnabled() && blue.isEnabled() && pink.isEnabled() && green.isEnabled() && purple.isEnabled()) {
+					System.out.println("All color buttons are Enabled");
+				}else {
+					System.out.println("Not Enabled");
+				}
+			}
+		
 
 }
