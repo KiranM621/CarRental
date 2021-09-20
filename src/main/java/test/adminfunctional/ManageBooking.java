@@ -49,45 +49,31 @@ public class ManageBooking {
 		
 	
 	}
-	@Test
+	@Test(description="Admin confirm booked car ,Test status reflect to Home page or not")
 	public void manageBooking() throws InterruptedException {
 			driver.get(admin_URL);//load url
-			Thread.sleep(2000);
+
+			//Referencing from AdminLoginPage and AdminPanelPage
 			objAdminLoginPage.setUserName(admin_Name);
 			objAdminLoginPage.setPassword(password);
 			objAdminLoginPage.clickLogin();
-			Thread.sleep(2000);
-		
-		 //click on manage booking
 			objAdminPanelPage.clickOnManageBooking();
-			
-			Thread.sleep(2000);
-			
-			 //click on confirmed button
 			objAdminPanelPage.clickOnconfirm();
 			Alert alert=driver.switchTo().alert();
 			alert.accept();
+			
 			//check whether status On home page of my booking it updated or not
-			
-			Thread.sleep(2000);
-			
-			 //navigate to home page of carrental
 			driver.navigate().to(home_URL);
 			
-			//click on login/signup btn
+			//User Login to Homepage Referencing from LoginSignupPage
 			objLoginSignupPage.clickOnLoginSignup();
 			driver.manage().window().maximize();
 			objLoginSignupPage.setLoginUserName(user_Email);
-			Thread.sleep(2000);
-			
 			 objLoginSignupPage.setLoginPasswrod(password);
-			objLoginSignupPage.clickOnLogin();
+			 objLoginSignupPage.clickOnLogin();
 			
-			 Thread.sleep(2000);
-			
-			//click on profile
+			//Referencing from HomePage
 			objHomePage.clickOnprofile();
-			//click my booking
 			objHomePage.clickOnMyBooking();
 			
 			
@@ -101,6 +87,9 @@ public class ManageBooking {
 	driver.quit();
 	}
 
+
+ 
+ 
 }
   
 

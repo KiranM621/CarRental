@@ -43,12 +43,12 @@ public class HomePageMyBooking {
 				 
 		  }
 
-  @Test
+  @Test(description="Test my booking button redirect to correct page")
   public void homePageMyBookingTest() throws InterruptedException {
 	  driver.get(home_URL);//getURL
 		WebDriverWait wait = new WebDriverWait(driver,30);
 
-		
+		//Referencing from LoginSignupPage
 		objLoginSignupPage.clickOnLoginSignup();
 		
 		driver.manage().window().maximize();
@@ -56,7 +56,7 @@ public class HomePageMyBooking {
 		objLoginSignupPage.setLoginPasswrod(user_Password);
 	   	objLoginSignupPage.clickOnLogin();
 		
-		
+	  //Referencing from HomePage
 	    objHomePge.clickOnprofile();
 	    objHomePge.clickOnMyBooking();
 		

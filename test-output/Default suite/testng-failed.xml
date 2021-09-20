@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.adminfunctional.ManageBooking">
+      <class name="test.userlogin.UserLogin">
         <methods>
+          <include name="beforeMethod"/>
+          <include name="AfterTest"/>
+          <include name="loginWithValidDetailsTest"/>
           <include name="beforeTest"/>
-          <include name="manageBooking"/>
-          <include name="afterTest"/>
         </methods>
-      </class> <!-- test.adminfunctional.ManageBooking -->
+      </class> <!-- test.userlogin.UserLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

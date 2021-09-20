@@ -46,17 +46,19 @@ public void beforeTest() throws InterruptedException, IOException {
 		 
 	  
 	
-  @Test
+  @Test(description="while selection car and fuel Test whether it fetches correct car")
   public void fetchCarTest() throws InterruptedException {
 	
 	  		driver.get(home_URL);//getURL
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 
+			//Referencing from CarListingPage
 			objCarListingPage.clickCarListingbtn();
 			
 			 js.executeScript("window.scrollBy(0,350)", "");//scroll down
 			 
+			 //select car and fuel from drop-down list
 			 objCarListingPage.selectCarAndFuel();
 			 
 			// click search car
