@@ -29,7 +29,7 @@ public class AdminPassword {
 
 	WebDriver driver = null;
 	
-	@BeforeTest
+	@BeforeTest(description = "Creation of objects and settingup properties before test")
 	
 	public void beforeTest() {
 
@@ -41,11 +41,9 @@ public class AdminPassword {
 
 	}
 
-	@BeforeMethod
+	@BeforeMethod(description = "Loads basurl before every test")
 	
 	public void beforeMethod() {
-		WebDriverWait wait = new WebDriverWait(driver,20);
-
 		
 
 		driver.get(base_Url);
@@ -53,12 +51,11 @@ public class AdminPassword {
 
 	}
 	
-    @Test(priority = 1)
+    @Test(priority = 1,description = "Changing password with valid details")
 	
-	public void changePasswordOne() { 
+	public void changePasswordWithValidDetails() { 
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 
-		WebDriverWait wait = new WebDriverWait(driver,20);
 
     	String success_Message = PropertyReader.getProperty("admin_Password_Change_Message");
 		
@@ -82,9 +79,9 @@ public class AdminPassword {
 
 	}
     
-    @Test(priority = 2)
+    @Test(priority = 2,description = "Changing password : new password and confirm password don't match")
 	
-	public void changePasswordTwo() { 
+	public void changePasswordWithInvalidDetails() { 
 		
     	
     	String alertExpectedMsg = PropertyReader.getProperty("expected_Alert_Message");
@@ -117,9 +114,9 @@ public class AdminPassword {
 	}
     
     
-    @Test(priority = 3)
+    @Test(priority = 3,description = "Changing password : with wrong current password")
 	
-   	public void changePasswordThree() { 
+   	public void changePasswordWithInavlidCurrentPassword() { 
    		
    	
        	String expected_Error_Message = PropertyReader.getProperty("invalid_Admin_Login_Message");
@@ -138,7 +135,6 @@ public class AdminPassword {
         adminPanelPageObject.setConfirmPassword(admin_Invalid_Password);
    		
    		
-		WebDriverWait wait = new WebDriverWait(driver,20);
 
         adminPanelPageObject.clickOnSaveChange();
 
@@ -155,7 +151,6 @@ public class AdminPassword {
 	
 	public void AfterTest() { 
 		
-		WebDriverWait wait = new WebDriverWait(driver,20);
 
 		driver.quit();
 		

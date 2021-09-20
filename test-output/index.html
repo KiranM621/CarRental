@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\interimuser\AppData\Local\Temp\testng-eclipse--575991474\testng-customsuite.xml</span>
+                    <span>C:\Users\kirankumar_mishra\AppData\Local\Temp\testng-eclipse--2057016284\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,12 +104,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test.homepageui.HomeColorChanger" class="method navigator-link" hash-for-method="testColorsInChanger">testColorsInChanger</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test.adminfunctional.AdminLogin" class="method navigator-link" hash-for-method="adminLogout">adminLogout</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test.homepageui.HomeColorChanger" class="method navigator-link" hash-for-method="testHomePageColorChnager">testHomePageColorChnager</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test.adminfunctional.AdminLogin" class="method navigator-link" hash-for-method="invalidLogin">invalidLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test.adminfunctional.AdminLogin" class="method navigator-link" hash-for-method="validLogin">validLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -127,21 +132,34 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">test.homepageui.HomeColorChanger</span>
+              <span class="class-name">test.adminfunctional.AdminLogin</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testColorsInChanger">
-                  </a> <!-- testColorsInChanger -->
-                  <span class="method-name">testColorsInChanger</span>
+                  <a name="adminLogout">
+                  </a> <!-- adminLogout -->
+                  <span class="method-name">adminLogout</span>
+                  <em>
+(Testing logout functionality from adminpanel)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testHomePageColorChnager">
-                  </a> <!-- testHomePageColorChnager -->
-                  <span class="method-name">testHomePageColorChnager</span>
+                  <a name="invalidLogin">
+                  </a> <!-- invalidLogin -->
+                  <span class="method-name">invalidLogin</span>
+                  <em>
+(Testing adminlogin with invalid data)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validLogin">
+                  </a> <!-- validLogin -->
+                  <span class="method-name">validLogin</span>
+                  <em>
+(Testing admin login with valid data)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -149,7 +167,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\interimuser\AppData\Local\Temp\testng-eclipse--575991474\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\kirankumar_mishra\AppData\Local\Temp\testng-eclipse--2057016284\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -158,7 +176,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;test.homepageui.HomeColorChanger&quot;/&gt;
+      &lt;class name=&quot;test.adminfunctional.AdminLogin&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -198,20 +216,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testHomePageColorChnager')
-data.setCell(0, 2, 'test.homepageui.HomeColorChanger')
-data.setCell(0, 3, 757);
+data.setCell(0, 1, 'validLogin')
+data.setCell(0, 2, 'test.adminfunctional.AdminLogin')
+data.setCell(0, 3, 2907);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testColorsInChanger')
-data.setCell(1, 2, 'test.homepageui.HomeColorChanger')
-data.setCell(1, 3, 91);
+data.setCell(1, 1, 'invalidLogin')
+data.setCell(1, 2, 'test.adminfunctional.AdminLogin')
+data.setCell(1, 3, 415);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'adminLogout')
+data.setCell(2, 2, 'test.adminfunctional.AdminLogin')
+data.setCell(2, 3, 191);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 848 ms</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -237,22 +259,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">test.homepageui.HomeColorChanger</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.adminfunctional.AdminLogin</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">testHomePageColorChnager</span>
-                <span class="method-start">1757 ms</span>
+                <span class="method-name">validLogin</span>
+                <span class="method-start">3172 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testColorsInChanger</span>
-                <span class="method-start">2518 ms</span>
+                <span class="method-name">adminLogout</span>
+                <span class="method-start">6084 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">invalidLogin</span>
+                <span class="method-start">6277 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">2610 ms</span>
+                <span class="method-start">6694 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -28,7 +29,7 @@ public class AdminLogin {
 	AdminLoginPage adminLoginPageObject = null;
 	WebDriver driver = null;
 	
-	@BeforeTest
+	@BeforeTest(description = "Creation of objects and settingup properties before test")
 	public void beforeTest() {
 
 		System.setProperty("webdriver.chrome.driver",path);
@@ -44,7 +45,7 @@ public class AdminLogin {
 	
 	
 
-	@Test(priority = 1)
+	@Test(priority = 1,description = "Testing admin login with valid data")
 	
 	public void validLogin() { 
 		
@@ -58,17 +59,16 @@ public class AdminLogin {
 		adminLoginPageObject.setUserName(admin_Name);
 		adminLoginPageObject.setPassword(admin_Password);
         adminLoginPageObject.clickLogin();
-		
-			
+				
 		String actual_Title = driver.getTitle();
-		
+
 		Assert.assertEquals(actual_Title, expected_Title);
 		
 
 		
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 2,description = "Testing logout functionality from adminpanel")
 
 	public void adminLogout() throws InterruptedException { 
 		
@@ -85,7 +85,7 @@ public class AdminLogin {
 		
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 3,description = "Testing adminlogin with invalid data")
 	
 	public void invalidLogin() { 
 		
@@ -107,7 +107,7 @@ public class AdminLogin {
 	}
 	
 	
-	@AfterTest
+	@AfterTest(description="Closing browser")
 	
 	public void afterTest() { 
 		

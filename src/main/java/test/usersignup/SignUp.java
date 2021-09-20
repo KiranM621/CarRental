@@ -31,7 +31,7 @@ public class SignUp {
 
 	LoginSignupPage loginSignupPageObject= null;
 	
-	@BeforeTest
+	@BeforeTest(description = "Creation of objects and settingup properties before test")
 	
 	public void beforeTest() {
 
@@ -41,7 +41,7 @@ public class SignUp {
 		loginSignupPageObject = new LoginSignupPage(driver);
 	}
 	
-	@BeforeMethod
+	@BeforeMethod(description = "Loads basurl before every test")
 	public void beforeMethod() {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 
@@ -57,17 +57,18 @@ public class SignUp {
 	@DataProvider(name="testData")
 	public Object[][] getData() { 
 		
-		
-		Object data[][] = testData("C:\\Users\\pooja_shitole\\Workspace1\\CarRental\\src\\main\\resources\\data\\Data.xlsx","Signup");
+		//storing data retrieved from excel in 2d array
+		Object data[][] = testData("D:\\Java\\CarRentalProject\\src\\main\\resources\\data\\Data.xlsx","Signup");
 		return data;
 		
 	}
 	
 	
 	
-	
+	//Reading data from excel file
 	public static Object[][] testData(String path,String sheet) { 
 		
+		//calling and using methods defined in ExcelUtil class from utilities.
 		ExcelUtils excel = new ExcelUtils(path,sheet);
 		int row_Count = excel.getRowCount();
 		int col_Count = excel.getColumnCount();
@@ -93,7 +94,7 @@ public class SignUp {
 		
 	}	
 	
-	@Test(priority=1,dataProvider="testData")
+	@Test(priority=1,dataProvider="testData",description="Verifying valid signup using data-driven test")
 	
 	public void signupTestValid(String name,String number,String email,String password,String confirmPassword) { 
 		WebDriverWait wait = new WebDriverWait(driver,30);
@@ -130,7 +131,7 @@ public class SignUp {
 		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,description="Verifying invalid signup")
 	
 	public void signupTestInvalid() { 
 		WebDriverWait wait = new WebDriverWait(driver,30);
@@ -158,7 +159,7 @@ public class SignUp {
 	}
 	
 	
-	@AfterTest
+	@AfterTest(description="Closing browser")
 	
 	public void AfterTest() { 
 		

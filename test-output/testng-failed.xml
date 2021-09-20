@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.aboutusui.AboutUsTest">
+      <class name="test.adminfunctional.ManageBooking">
         <methods>
-          <include name="aboutUsTest"/>
-          <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="aboutUsHeading"/>
+          <include name="manageBooking"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- test.aboutusui.AboutUsTest -->
+      </class> <!-- test.adminfunctional.ManageBooking -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

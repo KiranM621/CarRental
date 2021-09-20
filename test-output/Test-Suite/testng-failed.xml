@@ -3,14 +3,90 @@
 <suite name="Failed suite [Test-Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="TestLogin(failed)">
     <classes>
-      <class name="test.usersignup.SignUp">
+      <class name="test.homepageTests.HomePageMyBooking">
         <methods>
           <include name="beforeTest"/>
+          <include name="homePageMyBookingTest"/>
+          <include name="afteTest"/>
+        </methods>
+      </class> <!-- test.homepageTests.HomePageMyBooking -->
+      <class name="test.adminfunctional.AdminPassword">
+        <methods>
+          <include name="changePasswordTwo"/>
+          <include name="changePasswordThree"/>
+          <include name="beforeMethod"/>
+          <include name="changePasswordOne"/>
+          <include name="beforeTest"/>
           <include name="AfterTest"/>
-          <include name="signupTestValid" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- test.adminfunctional.AdminPassword -->
+      <class name="test.adminfunctional.AdminLogin">
+        <methods>
+          <include name="invalidLogin"/>
+          <include name="validLogin"/>
+          <include name="adminLogout"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- test.adminfunctional.AdminLogin -->
+      <class name="test.usersignup.SignUp">
+        <methods>
+          <include name="signupTestInvalid"/>
+          <include name="beforeTest"/>
+          <include name="AfterTest"/>
+          <include name="signupTestValid"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- test.usersignup.SignUp -->
+      <class name="test.adminfunctional.ManageBooking">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="manageBooking"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- test.adminfunctional.ManageBooking -->
+      <class name="test.userlogin.UserLogin">
+        <methods>
+          <include name="loginWithInValidDetailsTest"/>
+          <include name="beforeMethod"/>
+          <include name="AfterTest"/>
+          <include name="loginWithValidDetailsTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- test.userlogin.UserLogin -->
+      <class name="test.carlistingTests.BookCarTests">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="bookwithoutloginTest"/>
+          <include name="bookCarTest"/>
+          <include name="afterMethod"/>
+          <include name="beforeTest"/>
+          <include name="bookCarRequireFieldTest"/>
+        </methods>
+      </class> <!-- test.carlistingTests.BookCarTests -->
+      <class name="test.usersignup.ForgotPassword">
+        <methods>
+          <include name="changePasswordTwo"/>
+          <include name="beforeMethod"/>
+          <include name="afterTest"/>
+          <include name="changePasswordOne"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- test.usersignup.ForgotPassword -->
+      <class name="test.carlistingTests.FetchCarTest">
+        <methods>
+          <include name="fetchCarTest"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- test.carlistingTests.FetchCarTest -->
+      <class name="test.ContactUsTest.ContactUsTest">
+        <methods>
+          <include name="contactusTest"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- test.ContactUsTest.ContactUsTest -->
     </classes>
   </test> <!-- TestLogin(failed) -->
 </suite> <!-- Failed suite [Test-Suite] -->

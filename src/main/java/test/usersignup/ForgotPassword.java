@@ -29,24 +29,25 @@ public class ForgotPassword {
 	WebDriver driver = null;
 
 	
-	@BeforeTest
+	@BeforeTest(description = "Creation of objects and settingup properties before test")
 	public void beforeTest() { 
 		System.setProperty("webdriver.chrome.driver",path);
 
 		driver = new ChromeDriver();
 		forgotPasswordPageObject = new ForgotPasswordPage(driver);
 		loginSignupPageObject = new LoginSignupPage(driver);	
+	
 	}
 	
-	@BeforeMethod
+	@BeforeMethod(description = "Loads basurl before every test")
 	public void beforeMethod() { 
 		
 		driver.get(base_Url);
 		driver.manage().window().maximize();
 	}
 
-	@Test(priority=1)
-	public void changePasswordOne() { 
+	@Test(priority=1,description = "Using valid user data")
+	public void retrievePasswordWithValidData() { 
 		
 		String expected_Message = PropertyReader.getProperty("password_Change_Success_Message");
 		
@@ -74,8 +75,8 @@ public class ForgotPassword {
 	
 	}
 	
-	@Test(priority=2)
-	public void changePasswordTwo() { 
+	@Test(priority=2,description = "Using Invalid user data,new password and confirmpassword don't match")
+	public void  retrievePasswordWithInvalidData() { 
 		
 		String expected_Message = PropertyReader.getProperty("forgot_Password_Error_Message");
 		
@@ -99,7 +100,7 @@ public class ForgotPassword {
 		Assert.assertEquals(actual_Message, expected_Message);
 	
 	}
-	@AfterTest
+	@AfterTest(description="Closing browser")
 	public void afterTest() { 
 		
 		driver.quit();
