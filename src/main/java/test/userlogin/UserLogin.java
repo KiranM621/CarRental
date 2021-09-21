@@ -103,18 +103,18 @@ public class UserLogin {
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		//Referencing from LoginSignupPage
 		objLoginSignupPage.clickOnLoginSignup();
-		
+		Thread.sleep(2000);
 		driver.manage().window().maximize();
 		objLoginSignupPage.setLoginUserName(user_Email);
 		objLoginSignupPage.setLoginPasswrod(wrong_Password);
-	 
+		Thread.sleep(2000);
 	   	objLoginSignupPage.clickOnLogin();
-		
+	   	Thread.sleep(5000);
 		
 		Alert alert=driver.switchTo().alert();
 		String alertMessage=driver.switchTo().alert().getText();
 		assertEquals("Invalid Details",alertMessage);
-		Thread.sleep(5000);
+		
 		alert.accept();
 	
 	}
@@ -126,13 +126,13 @@ public class UserLogin {
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		//Referencing from LoginSignupPage
 		objLoginSignupPage.clickOnLoginSignup();
-		
+		Thread.sleep(1000);
 		driver.manage().window().maximize();
 		objLoginSignupPage.setLoginUserName(email);
 		objLoginSignupPage.setLoginPasswrod(password);
-	 
+		Thread.sleep(2000);
 	   	objLoginSignupPage.clickOnLogin();
-		
+	   	Thread.sleep(3000);
 	   	//validation of login
 		
 		String welcomMsg=driver.findElement(By.xpath("/html/body/header/div/div/div/div[2]/div")).getText();

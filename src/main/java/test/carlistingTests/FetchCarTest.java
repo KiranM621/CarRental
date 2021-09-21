@@ -52,19 +52,23 @@ public void beforeTest() throws InterruptedException, IOException {
 	  		driver.get(home_URL);//getURL
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			Thread.sleep(2000);
 
 			//Referencing from CarListingPage
 			objCarListingPage.clickCarListingbtn();
 			
 			 js.executeScript("window.scrollBy(0,350)", "");//scroll down
-			 
+				Thread.sleep(2000);
+
 			 //select car and fuel from drop-down list
 			 objCarListingPage.selectCarAndFuel();
-			 
+				Thread.sleep(2000);
+
 			// click search car
 			 objCarListingPage.clickSearchCar();
 			 js.executeScript("window.scrollBy(0,350)", "");//scroll down
 
+				Thread.sleep(2000);
 
 			 
 			 //validation

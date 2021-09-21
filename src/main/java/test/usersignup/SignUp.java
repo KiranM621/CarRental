@@ -96,16 +96,16 @@ public class SignUp {
 	
 	@Test(priority=1,dataProvider="testData",description="Verifying valid signup using data-driven test")
 	
-	public void signupTestValid(String name,String number,String email,String password,String confirmPassword) { 
+	public void signupTestValid(String name,String number,String email,String password,String confirmPassword) throws InterruptedException { 
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		String expected_Message = PropertyReader.getProperty("registration_Success");
 		
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 
-		
+		Thread.sleep(2000);
 		//Referencing From LoginSignupPage
 		loginSignupPageObject.clickOnLoginSignup();
-
+		Thread.sleep(2000);
 		loginSignupPageObject.clickOnSignup();
 		
 		
@@ -116,11 +116,11 @@ public class SignUp {
 		loginSignupPageObject.setSignupPasswrod(password);
 		loginSignupPageObject.setSignupConfirmPassword(confirmPassword);
 		
-		
+		Thread.sleep(2000);
 		
 		loginSignupPageObject.clickOnSignup_Button();
 		
-
+		Thread.sleep(2000);
 
 		String actual_Message =driver.switchTo().alert().getText() ;
 		
@@ -133,22 +133,22 @@ public class SignUp {
 	
 	@Test(priority=2,description="Verifying invalid signup")
 	
-	public void signupTestInvalid() { 
+	public void signupTestInvalid() throws InterruptedException { 
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		String expected_Message = PropertyReader.getProperty("email_Present");
 		
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
-		
+		Thread.sleep(2000);
 		//Referencing From LoginSignupPages
 		loginSignupPageObject.clickOnLoginSignup();
 		loginSignupPageObject.clickOnSignup();
-	
+		Thread.sleep(2000);
 		loginSignupPageObject.setSignupUserName(user_Name);
 		loginSignupPageObject.setSignupUserNumber(user_Number);
 		loginSignupPageObject.setSignupUserEmail(user_Email);
 		loginSignupPageObject.setSignupPasswrod(user_Password);
 		loginSignupPageObject.setSignupConfirmPassword(user_Password);
-
+		Thread.sleep(4000);
 		
 		
 		String actual_Message = driver.findElement(By.xpath("//*[@id=\"user-availability-status\"]/span")).getText();

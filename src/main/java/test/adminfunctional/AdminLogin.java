@@ -47,19 +47,20 @@ public class AdminLogin {
 
 	@Test(priority = 1,description = "Testing admin login with valid data")
 	
-	public void validLogin() { 
+	public void validLogin() throws InterruptedException { 
 		
 		String expected_Title = PropertyReader.getProperty("admin_Page_Title");
 		
 		driver.get(base_Url);
-		
+		Thread.sleep(1000);
 		
 		// referencing through AdminLoginPage class
 
 		adminLoginPageObject.setUserName(admin_Name);
 		adminLoginPageObject.setPassword(admin_Password);
+		Thread.sleep(2000);
         adminLoginPageObject.clickLogin();
-				
+        Thread.sleep(1000);	
 		String actual_Title = driver.getTitle();
 
 		Assert.assertEquals(actual_Title, expected_Title);
@@ -73,11 +74,11 @@ public class AdminLogin {
 	public void adminLogout() throws InterruptedException { 
 		
 		String expected_Title = PropertyReader.getProperty("admin_Login_Page_Title");
-		
+		Thread.sleep(1000);
 		//refrencing from AdminPanelPage
 		adminPanelPageObject.clickOnAccount();
 		adminPanelPageObject.clickOnLogout();
-		
+		Thread.sleep(1000);
 		String actual_Title = driver.getTitle();
 		
 		Assert.assertEquals(actual_Title, expected_Title);
@@ -87,18 +88,19 @@ public class AdminLogin {
 	
 	@Test(priority = 3,description = "Testing adminlogin with invalid data")
 	
-	public void invalidLogin() { 
+	public void invalidLogin() throws InterruptedException { 
 		
 		driver.get(base_Url);
 		String expected_Message = PropertyReader.getProperty("admin_Invalid_Login_Message");
 		
 		driver.get(base_Url);
-		
+		Thread.sleep(2000);
 		// referencing through AdminLoginPage class
 		adminLoginPageObject.setUserName(admin_Name);
 		adminLoginPageObject.setPassword(admin_Invalid_Password);
+		Thread.sleep(1000);
         adminLoginPageObject.clickLogin();
-		
+        Thread.sleep(2000);
 		String actual_Message = driver.switchTo().alert().getText();
 		driver.switchTo().alert().accept();
 		

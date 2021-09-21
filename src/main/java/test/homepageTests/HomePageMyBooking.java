@@ -48,19 +48,28 @@ public class HomePageMyBooking {
 	  driver.get(home_URL);//getURL
 		WebDriverWait wait = new WebDriverWait(driver,30);
 
+		Thread.sleep(2000);
+
 		//Referencing from LoginSignupPage
 		objLoginSignupPage.clickOnLoginSignup();
-		
+		Thread.sleep(2000);
+
 		driver.manage().window().maximize();
 		objLoginSignupPage.setLoginUserName(user_Email);
 		objLoginSignupPage.setLoginPasswrod(user_Password);
+		Thread.sleep(1000);
+
 	   	objLoginSignupPage.clickOnLogin();
-		
+		Thread.sleep(2000);
+
 	  //Referencing from HomePage
 	    objHomePge.clickOnprofile();
+		Thread.sleep(2000);
+
 	    objHomePge.clickOnMyBooking();
-		
-		
+	   // js.executeScript("window.scrollBy(0,800)", "");
+		Thread.sleep(5000);
+
 		String Text= driver.findElement(By.xpath("/html/body/section[2]/div/div[2]/div[2]/div/h5")).getText();
 		assertEquals("MY BOOKINGS",Text);
 	  

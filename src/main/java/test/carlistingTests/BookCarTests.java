@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -64,23 +65,28 @@ public class BookCarTests {
 				
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		//Referencing from CarListingPage
+		Thread.sleep(1000);
 		objCarListingPage.clickCarListingbtn();
 		
 		 js.executeScript("window.scrollBy(0,350)", "");//scroll down
 		 objCarListingPage.selectCarAndFuel();
-		 
+			Thread.sleep(2000);
+
 		 objCarListingPage.clickSearchCar();
 		 js.executeScript("window.scrollBy(0,350)", "");
+			Thread.sleep(2000);
+
 		 objCarListingPage.clickViewDetails();
 		 js.executeScript("window.scrollBy(0,350)", "");
 		 
-		 
+			Thread.sleep(2000);
+
 		 WebElement bookBtn=driver.findElement(By.xpath("/html/body/section[2]/div/div[2]/aside/div[2]/form/a"));
 		 String textofbtn=bookBtn.getText();
 		 assertEquals("LOGIN FOR BOOK",textofbtn);
 		    bookBtn.click();	
-
-		 //Thread.sleep(5000);
+			
+		 Thread.sleep(5000);
   }
   
   
@@ -89,29 +95,39 @@ public class BookCarTests {
   public void bookCarRequireFieldTest() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		Thread.sleep(1000);
 
 		//Referencing from LoginSignUpPage
 		objLoginSignupPage.clickOnLoginSignup();
 		driver.manage().window().maximize();
 		objLoginSignupPage.setLoginUserName(user_Email);
 		objLoginSignupPage.setLoginPasswrod(user_Password);
+		Thread.sleep(1000);
 		objLoginSignupPage.clickOnLogin();
-		
+		Thread.sleep(2000);
+
 		//Referencing from CarListingPage
 		objCarListingPage.clickCarListingbtn();
 		js.executeScript("window.scrollBy(0,350)", "");//scroll down
-		 
+		Thread.sleep(1000);
+
 		 objCarListingPage.selectCarAndFuel();
+			Thread.sleep(2000);
+
 		 objCarListingPage.clickSearchCar();
 		 
+			Thread.sleep(2000);
+
 		 js.executeScript("window.scrollBy(0,350)", "");
 		 objCarListingPage.clickViewDetails();
 		 js.executeScript("window.scrollBy(0,550)", "");
-		
+			Thread.sleep(1000);
+
 		 objCarListingPage.setFromdate(bookcar_fromdate);
 		 objCarListingPage.setTodate(bookcar_todate);
 		 objCarListingPage.clickBookNow();
-			
+			Thread.sleep(5000);
+
 			WebElement message = driver.findElement(By.xpath("/html/body/section[2]/div/div[2]/aside/div[2]/form/div[3]/textarea"));
 			String validationMessage = message.getAttribute("validationMessage");
 			assertEquals("Please fill out this field.",validationMessage);
@@ -123,15 +139,18 @@ public class BookCarTests {
   @Test(priority=3,description="Book car successfully")
   public void bookCarTest() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		
+		Thread.sleep(1000);
+
 		//Referencing from CarListingPage
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		objCarListingPage.clickCarListingbtn();
 		js.executeScript("window.scrollBy(0,350)", "");//scroll down
-		 
+		Thread.sleep(2000);
+
 		 objCarListingPage.selectCarAndFuel();
 		 objCarListingPage.clickSearchCar();
-		 
+			Thread.sleep(2000);
+
 		 js.executeScript("window.scrollBy(0,350)", "");
 		 objCarListingPage.clickViewDetails();
 		 js.executeScript("window.scrollBy(0,550)", "");
@@ -139,17 +158,19 @@ public class BookCarTests {
 		 objCarListingPage.setTodate(bookcar_todate);
 		 
 		 objCarListingPage.setMessage(book_car_msg);
-		
-//		 objCarListingPage.clickBookNow();
+			Thread.sleep(2000);
+
+		 objCarListingPage.clickBookNow();
 		 
-	 
+			//Thread.sleep(2000);
+
 	 
 		 	//validation Booking successful pop-up message got or not
-//		 Alert alert=driver.switchTo().alert();
-//			String alertMessage=driver.switchTo().alert().getText();
-//			assertEquals("Booking successfull.",alertMessage);	
+		 Alert alert=driver.switchTo().alert();
+			String alertMessage=driver.switchTo().alert().getText();
+			assertEquals("Booking successfull.",alertMessage);	
 		 
-		// Thread.sleep(5000);
+		 Thread.sleep(5000);
 		 
 		 
 		 
