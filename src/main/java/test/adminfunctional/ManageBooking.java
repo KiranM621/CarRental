@@ -52,30 +52,38 @@ public class ManageBooking {
 	@Test(description="Admin confirm booked car ,Test status reflect to Home page or not")
 	public void manageBooking() throws InterruptedException {
 			driver.get(admin_URL);//load url
-
+             
 			//Referencing from AdminLoginPage and AdminPanelPage
 			objAdminLoginPage.setUserName(admin_Name);
 			objAdminLoginPage.setPassword(password);
+			Thread.sleep(2000);
 			objAdminLoginPage.clickLogin();
+			Thread.sleep(1000);
 			objAdminPanelPage.clickOnManageBooking();
+			Thread.sleep(2000);
 			objAdminPanelPage.clickOnconfirm();
+			Thread.sleep(2000);
 			Alert alert=driver.switchTo().alert();
 			alert.accept();
 			
 			//check whether status On home page of my booking it updated or not
 			driver.navigate().to(home_URL);
-			
+			Thread.sleep(1000);
 			//User Login to Homepage Referencing from LoginSignupPage
 			objLoginSignupPage.clickOnLoginSignup();
 			driver.manage().window().maximize();
 			objLoginSignupPage.setLoginUserName(user_Email);
 			 objLoginSignupPage.setLoginPasswrod(password);
+				Thread.sleep(1000);
 			 objLoginSignupPage.clickOnLogin();
-			
+				Thread.sleep(2000);
 			//Referencing from HomePage
 			objHomePage.clickOnprofile();
+			Thread.sleep(1000);
 			objHomePage.clickOnMyBooking();
-			
+			 js.executeScript("window.scrollBy(0,800)", "");
+
+			Thread.sleep(2000);
 			
 			 //validate confirmed is updated or not
 			String btnText= driver.findElement(By.xpath("/html/body/section[2]/div/div[2]/div[2]/div/div/ul/li[3]/div[3]/a")).getText();

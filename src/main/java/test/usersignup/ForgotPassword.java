@@ -47,7 +47,7 @@ public class ForgotPassword {
 	}
 
 	@Test(priority=1,description = "Using valid user data")
-	public void retrievePasswordWithValidData() { 
+	public void retrievePasswordWithValidData() throws InterruptedException { 
 		
 		String expected_Message = PropertyReader.getProperty("password_Change_Success_Message");
 		
@@ -55,7 +55,9 @@ public class ForgotPassword {
 		
 		
 		//Referencing from LoginSignupPage
+		Thread.sleep(2000);
 		loginSignupPageObject.clickOnLoginSignup();
+		Thread.sleep(2000);
 		loginSignupPageObject.clickOnForgotPassword();
 		
 		//Referencing from ForgotPasswordPage
@@ -63,9 +65,10 @@ public class ForgotPassword {
 		forgotPasswordPageObject.setUserNumber(user_Number);
 		forgotPasswordPageObject.setNewPassword(user_New_Password);
 		forgotPasswordPageObject.setConfirmPassword(user_New_Password);
+		Thread.sleep(2000);
 		forgotPasswordPageObject.clickOnReset();
 
-		
+		Thread.sleep(4000);
 	
 	
 		String actual_Message = driver.switchTo().alert().getText();
@@ -76,23 +79,25 @@ public class ForgotPassword {
 	}
 	
 	@Test(priority=2,description = "Using Invalid user data,new password and confirmpassword don't match")
-	public void  retrievePasswordWithInvalidData() { 
+	public void  retrievePasswordWithInvalidData() throws InterruptedException { 
 		
 		String expected_Message = PropertyReader.getProperty("forgot_Password_Error_Message");
 		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
+		Thread.sleep(2000);
 		//Referencing from LoginSignupPage
 		loginSignupPageObject.clickOnLoginSignup();
+		Thread.sleep(1000);
 		loginSignupPageObject.clickOnForgotPassword();
-
+		Thread.sleep(2000);
 		//Referencing from ForgotPasswordPage
 		forgotPasswordPageObject.setUserEmail(user_Email);
 		forgotPasswordPageObject.setUserNumber(user_Number);
 		forgotPasswordPageObject.setNewPassword(user_New_Password);
 		forgotPasswordPageObject.setConfirmPassword(password);
+		Thread.sleep(2000);
 		forgotPasswordPageObject.clickOnReset();
-		
+		Thread.sleep(4000);
 	
 		String actual_Message = driver.switchTo().alert().getText();
 		driver.switchTo().alert().accept();

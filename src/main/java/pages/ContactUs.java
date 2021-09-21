@@ -12,15 +12,15 @@ public class ContactUs {
 	//contact us btn
 	By contactus=By.xpath("//*[@id=\"navigation\"]/ul/li[5]/a");
 	//contact us fullname textbox
-	By contactus_Fullname=By.id("fullname");
+	By contactus_Fullname=By.xpath("//*[@id=\"fullname\"]");
 	//contact us email textbox
-	By contactus_Email=By.name("email");
+	By contactus_Email=By.xpath("//*[@id=\"emailaddress\"]");
 	//contact us mobile number textbox
-	By contactus_Mob=By.id("phonenumber");
+	By contactus_Mob=By.xpath("//*[@id=\"phonenumber\"]");
 	//contact us message textbox
-	By contactus_Msg=By.name("message");
+	By contactus_Msg=By.xpath("/html/body/section[2]/div/div/div[1]/div/form/div[4]/textarea");
 	//contact us send btn
-	By contactus_send=By.name("send");
+	By contactus_send=By.xpath("//button[@name='send']");
 	// Contact us page heading
 	By contactHeading=By.xpath("/html/body/section[1]/div[1]/div/div/h1");
 
@@ -40,12 +40,12 @@ public class ContactUs {
 	}
 	
 	public void contactusEnterphone(String arg1) {
-		driver.findElement(contactus_Email).sendKeys(arg1);
+		driver.findElement(contactus_Mob).sendKeys(arg1);
 		
 	}
 	
 	public void contactusEnteremail(String arg1) {
-		driver.findElement(contactus_Mob).sendKeys(arg1);
+		driver.findElement(contactus_Email).sendKeys(arg1);
 	}
 	
 	public void contactusMessage(String arg1) {

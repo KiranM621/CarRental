@@ -49,26 +49,30 @@ public class ContactUsTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		objContactUs =new ContactUs(driver);
-		
+		Thread.sleep(2000);
+
 		//Referencing from ContactUsPage
 		objContactUs.clickContactus();
-  
+		Thread.sleep(2000);
+		 js.executeScript("window.scrollBy(0,550)", "");
+
         objContactUs.contactusEnterfullname(contactus_Fullname);
         objContactUs.contactusEnteremail(contactus_Email);
         objContactUs.contactusEnterphone(contactus_Mob);
         objContactUs.contactusMessage(contactus_Msg);
-        
 		
-//		objContactUs.clickOnsend();
-       
+		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(5000);
+
+		objContactUs.clickOnsend();
        //validation
-       
-//        String msg=  driver.findElement(By.xpath("/html/body/section[2]/div/div/div[1]/div[1]")).getText();
-//        assertEquals("SUCCESS:Query Sent. We will contact you shortly",msg);
-	  
+		Thread.sleep(5000);
+       String msg=  driver.findElement(By.xpath("/html/body/section[2]/div/div/div[1]/div[1]")).getText();
+        assertEquals("SUCCESS:Query Sent. We will contact you shortly",msg);
+
+		
   }
-  
-  
+ 
   @AfterTest
   public void afterTest() {
 	  driver.quit();
